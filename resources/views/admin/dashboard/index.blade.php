@@ -121,6 +121,9 @@
             <div class="row">
 
                 <div class="col-xl-12">
+                    <center>
+                    <a href="/subscription" class="btn btn-lg btn-primary">Subscribe Here</a>
+                    </center><br>
                     <div class="card">
                         <div class="card-body">
                             <div class="dropdown float-end">
@@ -140,7 +143,7 @@
                                 </div>
                             </div>
 
-                            <h4 class="header-title mt-0 mb-3">Payment History</h4>
+                            <h4 class="header-title mt-0 mb-3">Transaction History</h4>
 
                             <div class="table-responsive">
                                 <table id="datatable-buttons" class="table table-hover mb-0 dt-responsive nowrap">
@@ -148,45 +151,35 @@
                                         <tr>
                                             <th>#</th>
                                             <th>Investor</th>
-                                            <th>Unit</th>
-                                            <th>Tenant</th>
-                                            <th>Tenant Tel</th>
+                                            <th>Amount</th>                                            
                                             <th>Start Date</th>
-                                            <th>Due Date</th>
+                                            <th>Withdrawal Date</th>
                                             <th>Status</th>
 
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @forelse ($tenants as $tenant)
-                                            @php
-                                                $payment = $tenant->current_payment;
-                                                if (!empty($payment)) {
-                                                    $duedate = explode(' ', $payment->duedate);
-                                                    $startdate = explode(' ', $payment->startdate);
-                                                }
-                                                
-                                            @endphp
+                                        
                                             <tr>
-                                                <td>{{ $tenant->id }}</td>
-                                                <td>{{ $tenant->property->propname }}</td>
-                                                <td>{{ $tenant->unit->name }}</td>
-                                                <td>{{ $tenant->name }}</td>
-                                                <td>{{ $tenant->phone }}</td>
-                                                @if (!empty($payment))
-                                                    <td>{{ $startdate[0] }}</td>
-                                                    <td> {{ $duedate[0] }}</td>
-                                                    <td><span class="badge bg-success">paid</span></td>
-                                                @else
-                                                    <td>null</td>
-                                                    <td>null</td>
-                                                    <td><span class="badge bg-danger">not paid</span></td>
-                                                @endif
+                                                <td>1</td>
+                                                <td>Austin Solomon</td>
+                                                <td>50000</td>                                                
+                                                <td>12/12/2021</td>                                               
+                                                <td>17/12/2021</td>                                               
+                                                <td><span class="badge bg-success">Withdrawn</span></td>                                              
 
                                             </tr>
-                                        @empty
-                                            
-                                        @endforelse
+
+                                            <tr>
+                                                <td>2</td>
+                                                <td>Austin Solomon</td>
+                                                <td>50000</td>                                                
+                                                <td>12/01/2021</td>                                               
+                                                <td>17/01/2021</td>                                               
+                                                <td><span class="badge bg-warning">In Progress</span></td>                                              
+
+                                            </tr>
+                                       
 
                                     </tbody>
                                 </table>

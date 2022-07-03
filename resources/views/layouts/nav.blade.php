@@ -133,18 +133,19 @@
         <div class="logo-box">
             <a href="/" class="logo logo-light text-center">
                 <span class="logo-sm">
-                    <img src="/assets/images/fav.png" alt="" height="50">
+                
+                    <img src="/assets/images/logo4app.png" alt="" height="50">
                 </span>
                 <span class="logo-lg">
-                    <img src="/assets/images/mytpluslight.png" alt="" height="50">
+                    <img src="/assets/images/logo4app.png" alt="" height="50">
                 </span>
             </a>
             <a href="/" class="logo logo-dark text-center">
                 <span class="logo-sm">
-                    <img src="/assets/images/fav.png" alt="" height="50">
+                    <img src="/assets/images/logo4app.png" alt="" height="50">
                 </span>
                 <span class="logo-lg">
-                    <img src="/assets/images/mytplus.png" alt="" height="50">
+                    <img src="/assets/images/logo4app.png" alt="" height="50">
                 </span>
             </a>
         </div>

@@ -15,46 +15,46 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link arrow-none" href="/property" id="topnav-dashboard" role="button"
                            aria-haspopup="true" aria-expanded="false">
-                            <i class="mdi mdi-domain me-1"></i> PROPERTY
+                            <i class="mdi mdi-cash-multiple me-1"></i> ADD YOUR BANK DETAILS
                         </a>
 
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link arrow-none" href="/units" id="topnav-dashboard" role="button"
                            aria-haspopup="true" aria-expanded="false">
-                            <i class="mdi mdi-home-plus me-1"></i> UNITS
+                            <i class="mdi mdi-cash-multiple me-1"></i> SUBSCRIBE NOW
                         </a>
 
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link arrow-none" href="/tenants" id="topnav-dashboard" role="button"
                            aria-haspopup="true" aria-expanded="false">
-                            <i class="mdi mdi-account-group me-1"></i> TENANTS
+                            <i class="mdi mdi-cash-multiple me-1"></i> REQUEST WITHDRAWAL
                         </a>
 
                     </li>
-                    <li class="nav-item dropdown">
+                    <!-- <li class="nav-item dropdown">
                         <a class="nav-link arrow-none" href="/tenancy-payments" id="topnav-dashboard" role="button"
                            aria-haspopup="true" aria-expanded="false">
                             <i class="mdi mdi-cash-multiple me-1"></i> PAYMENT RECORD
                         </a>
 
-                    </li>
+                    </li> -->
 
-                    <li class="nav-item dropdown">
+                    <!-- <li class="nav-item dropdown">
                         <a class="nav-link arrow-none" href="/users" id="topnav-dashboard" role="button"
                            aria-haspopup="true" aria-expanded="false">
                             <i class="mdi mdi-account-multiple-plus me-1"></i> USERS
                         </a>
 
-                    </li>
-                    <li class="nav-item dropdown">
+                    </li> -->
+                    <!-- <li class="nav-item dropdown">
                         <a class="nav-link arrow-none" href="/artisans" id="topnav-dashboard" role="button"
                            aria-haspopup="true" aria-expanded="false">
                             <i class="mdi mdi-account-cog me-1"></i> ARTISANS
                         </a>
 
-                    </li>
+                    </li> -->
                     <!-- <li class="nav-item dropdown">
                         <a class="nav-link arrow-none" href="/chatbox" id="topnav-dashboard" role="button"
                            aria-haspopup="true" aria-expanded="false">
@@ -63,13 +63,13 @@
 
                     </li> -->
 
-                    <li class="nav-item dropdown">
+                    <!-- <li class="nav-item dropdown">
                         <a class="nav-link arrow-none" href="/settings" id="topnav-dashboard" role="button"
                            aria-haspopup="true" aria-expanded="false">
                             <i class="mdi mdi-cogs me-1"></i> SETTINGS
                         </a>
 
-                    </li>
+                    </li> -->
 
                     <li class="nav-item dropdown  " id="clockdiv">
                         <a class="nav-link arrow-none" href="#" id="topnav-dashboard" role="button"

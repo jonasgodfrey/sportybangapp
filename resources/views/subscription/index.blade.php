@@ -25,8 +25,8 @@
 
                         <footer class="blockquote-footer">
                             <h4 class="text-center justify-center text-red-600">
-                                please select a subscription plan you are
-                                comfortable with to proceed to our application
+                                Please select an Investment plan you are
+                                comfortable with
                             </h4>
                         </footer>
                     </blockquote>
@@ -42,24 +42,18 @@
                                         <div class="inner-box card-body">
                                             <div class="plan-header p-3 text-center">
                                                 <h3 class="plan-title">Basic</h3>
-                                                <h2 class="plan-price fw-normal">₦300.00 Per Unit</h2>
-                                                <div class="plan-duration">Per Month</div>
+                                                <h2 class="plan-title">₦5,000.00</h2>
+                                                <div class="plan-duration">Per Week</div>
                                             </div>
                                             <ul class="plan-stats list-unstyled text-center p-3 mb-0">
-                                                <li>Unlimited Properties</li>
-                                                <li>Unlimited Managers</li>
-                                                <li>Unlimited Tenants</li>
-                                                <li>Unlimited Artisans</li>
-                                                <li>Unlimited Notification/Reminders</li>
-                                                <li>24x7 Support</li>
+                                                <li>5% Returns</li>
+                                                <li>Weekly Basis</li>                                                
                                             </ul>
 
                                             <div class="text-center">
-                                                <button
-                                                    class="btn btn-bordered-success btn-success rounded-pill waves-effect waves-light"
-                                                    data-bs-toggle="modal" data-bs-target="#basicPlanModal">
-                                                    Pay Now
-                                                </button>
+                                            <a href="https://paystack.com"
+                                                   class="btn btn-success btn-bordered-success rounded-pill waves-effect waves-light">Pay
+                                                    Now</a>
                                             </div>
                                         </div>
                                     </div>
@@ -73,25 +67,18 @@
                                         <div class="inner-box card-body">
                                             <div class="plan-header p-3 text-center">
                                                 <h3 class="plan-title">Premium</h3>
-                                                <h2 class="plan-price fw-normal">₦3,480 Per Unit</h2>
-                                                <div class="plan-duration">Per Year</div>
+                                                <h2 class="plan-title">₦10,000.00</h2>
+                                                <div class="plan-duration">Per Week</div>
                                             </div>
                                             <ul class="plan-stats list-unstyled text-center p-3 mb-0">
-                                                <li>Unlimited Properties</li>
-                                                <li>Unlimited Managers</li>
-                                                <li>Unlimited Tenants</li>
-                                                <li>Unlimited Artisans</li>
-                                                <li>Unlimited Notification/Reminders</li>
-                                                <li>Market Place Listing</li>
-                                                <li>24x7 Support</li>
+                                                <li>5% Returns</li>
+                                                <li>Weekly Basis</li>                                                
                                             </ul>
 
                                             <div class="text-center">
-                                                <button
-                                                    class="btn btn-bordered-success btn-success rounded-pill waves-effect waves-light"
-                                                    data-bs-toggle="modal" data-bs-target="#premiumPlanModal">
-                                                    Pay Now
-                                                </button>
+                                            <a href="https://paystack.com"
+                                                   class="btn btn-success btn-bordered-success rounded-pill waves-effect waves-light">Pay
+                                                    Now</a>
                                             </div>
                                         </div>
                                     </div>
@@ -104,18 +91,12 @@
                                         <div class="inner-box card-body">
                                             <div class="plan-header p-3 text-center">
                                                 <h3 class="plan-title">Executive</h3>
-                                                <h2 class="plan-price fw-normal">₦5,500,000</h2>
-                                                <div class="plan-duration">One off Sale</div>
+                                                <h2 class="plan-title">₦15,000.00</h2>
+                                                <div class="plan-duration">Per Week</div>
                                             </div>
-                                            <br>
-                                            <br>
                                             <ul class="plan-stats list-unstyled text-center p-3 mb-0">
-                                                <li>Unlimited Properties</li>
-                                                <li>Unlimited Managers</li>
-                                                <li>Unlimited Tenants</li>
-                                                <li>Unlimited Artisans</li>
-                                                <li>Unlimited Notification/Reminders</li>
-                                                <li>Training of Stakeholders</li>
+                                                <li>5% Returns</li>
+                                                <li>Weekly Basis</li>                                                
                                             </ul>
 
                                             <div class="text-center">

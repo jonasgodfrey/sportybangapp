@@ -1458,7 +1458,7 @@ body[data-layout-mode="horizontal"][data-layout-width="boxed"] .topnav {
   min-height: 100px; }
 
 body.authentication-bg {
-  background-image: url("../../../images/bg-auth3.png");
+  background-image: url("../../../images/header-bg.jpg");
   background-size: cover;
   background-position: center; }
 
