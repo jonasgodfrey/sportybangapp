@@ -51,7 +51,7 @@
                                         <div class="mb-3">
                                             <label for="simpleinput" class="form-label">Account Number</label>
                                             <input type="number" name="accno" id="simpleinput" class="form-control"
-                                                placeholder="account number" required>
+                                                placeholder="property address" required>
                                         </div>                                      
 
                                         
@@ -61,7 +61,7 @@
                                         <div class="mb-3">
                                             <label for="example-email" class="form-label">Account Name</label>
                                             <input type="text" id="example-email" name="accname" class="form-control"
-                                                placeholder="account name" required>
+                                                placeholder="Email" required>
                                         </div>
 
                                         
