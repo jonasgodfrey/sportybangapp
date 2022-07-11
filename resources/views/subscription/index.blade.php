@@ -37,16 +37,16 @@
 
 
                                 <!--Pricing Column-->
-                                <article class="pricing-column col-xl-4 col-md-6">
+                                <article class="pricing-column col-xl-3 col-md-6">
                                     <div class="card">
                                         <div class="inner-box card-body">
                                             <div class="plan-header p-3 text-center">
-                                                <h3 class="plan-title">Basic</h3>
+                                                <h3 class="plan-title">Step-up stage</h3>
                                                 <h2 class="plan-title">₦5,000.00</h2>
                                                 <div class="plan-duration">Per Week</div>
                                             </div>
                                             <ul class="plan-stats list-unstyled text-center p-3 mb-0">
-                                                <li>5% Returns</li>
+                                                <li>30% Returns</li>
                                                 <li>Weekly Basis</li>                                                
                                             </ul>
 
@@ -61,17 +61,17 @@
 
 
                                 <!--Pricing Column-->
-                                <article class="pricing-column col-xl-4 col-md-6">
+                                <article class="pricing-column col-xl-3 col-md-6">
                                     <div class="ribbon"><span>POPULAR</span></div>
                                     <div class="card">
                                         <div class="inner-box card-body">
                                             <div class="plan-header p-3 text-center">
-                                                <h3 class="plan-title">Premium</h3>
+                                                <h3 class="plan-title">Up-Grade Stage</h3>
                                                 <h2 class="plan-title">₦10,000.00</h2>
                                                 <div class="plan-duration">Per Week</div>
                                             </div>
                                             <ul class="plan-stats list-unstyled text-center p-3 mb-0">
-                                                <li>5% Returns</li>
+                                                <li>30% Returns</li>
                                                 <li>Weekly Basis</li>                                                
                                             </ul>
 
@@ -85,17 +85,41 @@
                                 </article>
 
                                 <!--Pricing Column-->
-                                <article class="pricing-column col-xl-4 col-md-6">
-                                    <div class="ribbon"><span>One Off</span></div>
+                                <article class="pricing-column col-xl-3 col-md-6">
+                                    <div class="ribbon"><span></span></div>
                                     <div class="card">
                                         <div class="inner-box card-body">
                                             <div class="plan-header p-3 text-center">
-                                                <h3 class="plan-title">Executive</h3>
-                                                <h2 class="plan-title">₦15,000.00</h2>
+                                                <h3 class="plan-title">Income-Stage</h3>
+                                                <h2 class="plan-title">₦20,000.00</h2>
                                                 <div class="plan-duration">Per Week</div>
                                             </div>
                                             <ul class="plan-stats list-unstyled text-center p-3 mb-0">
-                                                <li>5% Returns</li>
+                                                <li>30% Returns</li>
+                                                <li>Weekly Basis</li>                                                
+                                            </ul>
+
+                                            <div class="text-center">
+                                                <a href="https://paystack.com"
+                                                   class="btn btn-success btn-bordered-success rounded-pill waves-effect waves-light">Pay
+                                                    Now</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>
+
+                                <!--Pricing Column-->
+                                <article class="pricing-column col-xl-3 col-md-6">
+                                    <div class="ribbon"><span>EXECUTIVE</span></div>
+                                    <div class="card">
+                                        <div class="inner-box card-body">
+                                            <div class="plan-header p-3 text-center">
+                                                <h3 class="plan-title">Capital-Stage</h3>
+                                                <h2 class="plan-title">₦50,000.00</h2>
+                                                <div class="plan-duration">Per Week</div>
+                                            </div>
+                                            <ul class="plan-stats list-unstyled text-center p-3 mb-0">
+                                                <li>30% Returns</li>
                                                 <li>Weekly Basis</li>                                                
                                             </ul>
 
@@ -115,119 +139,7 @@
                     <!-- end row -->
                 </div>
             </div>
-            <!-- Modal -->
-            <div class="modal text-center  fade" id="basicPlanModal" tabindex="-1" aria-labelledby="basicPlanModalLabel"
-                 aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header bg-secondary text-center">
-                            <h5 class="modal-title text-white " id="basicPlanModalLabel">Basic Package Subscription</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <form method="POST" action="{{ route('pay') }}" accept-charset="UTF-8" class="form-horizontal"
-                              role="form">
-                            <div class="modal-body">
-
-                                <div class="row" style="margin-bottom:40px;">
-                                    <div class="mb-3">
-                                        <label for="amount" class="form-label">Total Cost (N): </label>
-                                        <h3 id="amount-text">0</h3>
-                                    </div>
-
-                                    <input type="hidden" name="amount" class="form-control" id="amount" value="30000">
-
-                                    <div class="mb-3">
-                                        <label for="units" class="form-label">Number Of Units: </label>
-                                        <input type="number" name="units" class="form-control"
-                                               placeholder="Enter Number of Units" id="units" value="" required>
-                                    </div>
-
-                                    <div class="col-md-8 col-md-offset-2">
-                                        <input type="hidden" name="email"
-                                               value="{{Auth::user()->email}}"> {{-- required --}}
-                                        <input type="hidden" name="orderID" value="345">
-                                        <input type="hidden" name="currency" value="NGN">
-                                        <input type="hidden" name="metadata[]"
-                                               value=""
-                                               id="metadata"> {{-- For other necessary things you want to add to your payload. it is optional though --}}
-                                        <input type="hidden" name="reference"
-                                               value="{{ Paystack::genTranxRef() }}"> {{-- required --}}
-                                        <input type="hidden" name="callback_url" class="form-control"
-                                               value="{{route('handleGatewayCallback')}}">
-                                        <input type="hidden" name="_token"
-                                               value="{{ csrf_token() }}"> {{-- employ this in place of csrf_field only in laravel 5.0 --}}
-
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                <button class="btn btn-success" onmousedown="fetchMetaValues()" type="submit">
-                                    Subscribe
-                                </button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Modal -->
-            <div class="modal text-center fade" id="premiumPlanModal" tabindex="-1"
-                 aria-labelledby="premiumPlanModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header bg-secondary">
-                            <h5 class="modal-title text-white " id="premiumPlanModalLabel">Premium Package
-                                Subscription</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <form method="POST" action="{{ route('pay') }}" accept-charset="UTF-8" class="form-horizontal"
-                              role="form">
-                            <div class="modal-body">
-
-                                <div class="row" style="margin-bottom:40px;">
-                                    <div class="mb-3">
-                                        <label for="amount" class="form-label">Total Cost (N): </label>
-                                        <h3 id="amount-text2">0</h3>
-                                    </div>
-
-                                    <input type="hidden" name="amount" class="form-control" id="amount2" value="">
-
-                                    <div class="mb-3">
-                                        <label for="units" class="form-label">Number Of Units: </label>
-                                        <input type="number" name="units" class="form-control"
-                                               placeholder="Enter Number of Units" id="units2" value="" required>
-                                    </div>
-
-                                    <div class="col-md-8 col-md-offset-2">
-                                        <input type="hidden" name="email"
-                                               value="{{Auth::user()->email}}"> {{-- required --}}
-                                        <input type="hidden" name="orderID" value="345">
-                                        <input type="hidden" name="currency" value="NGN">
-                                        <input type="hidden" name="metadata[]"
-                                               value=""
-                                               id="metadata2"> {{-- For other necessary things you want to add to your payload. it is optional though --}}
-                                        <input type="hidden" name="reference"
-                                               value="{{ Paystack::genTranxRef() }}"> {{-- required --}}
-                                        <input type="hidden" name="callback_url" class="form-control"
-                                               value="{{route('handleGatewayCallback')}}">
-                                        <input type="hidden" name="_token"
-                                               value="{{ csrf_token() }}"> {{-- employ this in place of csrf_field only in laravel 5.0 --}}
-
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                <button class="btn btn-success" onmousedown="fetchMetaValues2()" type="submit">
-                                    Subscribe
-                                </button>
-                            </div>
-                        </form>
-
-                    </div>
-                </div>
-            </div>
+           
 
         </div> <!-- container-fluid -->
 
@@ -235,35 +147,5 @@
     </div> <!-- content -->
 @endsection
 @section('js')
-    <script>
-        function fetchMetaValues() {
-            let metadata = document.getElementById( 'metadata' )
-            let units = document.getElementById( 'units' ).value
-            let fid = { 'unit': units, 'plan_type': '1' }
-            metadata.value = JSON.stringify( fid )
-        }
-
-        function fetchMetaValues2() {
-            let metadata = document.getElementById( 'metadata2' )
-            let units = document.getElementById( 'units2' ).value
-            let fid = { 'unit': units, 'plan_type': '2' }
-            metadata.value = JSON.stringify( fid )
-        }
-
-        $( '#units' ).on( 'input', function() {
-            let data = $( '#units' ).val()
-            let cost = data * 300
-
-            $( '#amount-text' ).html( `₦ ${ cost }` )
-            $( '#amount' ).val( `${ cost }00` )
-        } )
-
-        $( '#units2' ).on( 'input', function() {
-            let data2 = $( '#units2' ).val()
-            let cost2 = data2 * 3480
-
-            $( '#amount-text2' ).html( `₦ ${ cost2 }` )
-            $( '#amount2' ).val( `${ cost2 }00` )
-        } )
-    </script>
+   
 @endsection
