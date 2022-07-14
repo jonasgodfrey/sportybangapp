@@ -59,6 +59,11 @@ class WithdrawalRequestController extends Controller {
         $start_date = $user->subscription->start_date;
         $amount = $user->subscription->output_amount + $user->subscription->amount;
 
+        if($user->bank_account_detail === null){
+            Session::flash( 'flash_message', 'You Cannot perform this action, please add account details !' );
+            return redirect('/account-details');
+        }
+
         if( $user->transaction->transaction_type === 'deposit' ) {
             if( Carbon::today()->gt( $end_date ) ) {
 
@@ -76,7 +81,7 @@ class WithdrawalRequestController extends Controller {
                         'due_date'       => $due_date->diffForHumans() . ' (' . $due_date->format( 'M d Y' ) . ')',
                     ];
 
-                    Mail::to( 'delightiworima19@gmail.com' )->send( new WithdrawalRequestEmail( $datax ) );
+                    Mail::to( ['godfreyjtech2020@gmail.com', 'delightiworima19@gmail.com'] )->send( new WithdrawalRequestEmail( $datax ) );
 
                 } catch ( \Throwable $th ) {
                     return $th;

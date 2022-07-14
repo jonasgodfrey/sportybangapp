@@ -10,7 +10,6 @@
     A user placed a withdrawal request on <b>SPORTYBANG</b>
 </p>
 
-];
 <div>
     @component('mail::table')
         | name              | phone               | bank name               | account number                | account name             | amount                   |
