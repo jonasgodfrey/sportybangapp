@@ -13,21 +13,21 @@
                     </li>
 
                     <li class="nav-item dropdown">
-                        <a class="nav-link arrow-none" href="/property" id="topnav-dashboard" role="button"
+                        <a class="nav-link arrow-none" href="/account-details" id="topnav-dashboard" role="button"
                            aria-haspopup="true" aria-expanded="false">
                             <i class="mdi mdi-cash-multiple me-1"></i> ADD YOUR BANK DETAILS
                         </a>
 
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link arrow-none" href="/units" id="topnav-dashboard" role="button"
+                        <a class="nav-link arrow-none" href="/subscription" id="topnav-dashboard" role="button"
                            aria-haspopup="true" aria-expanded="false">
                             <i class="mdi mdi-cash-multiple me-1"></i> SUBSCRIBE NOW
                         </a>
 
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link arrow-none" href="/tenants" id="topnav-dashboard" role="button"
+                        <a class="nav-link arrow-none" href="/withdrawal" id="topnav-dashboard" role="button"
                            aria-haspopup="true" aria-expanded="false">
                             <i class="mdi mdi-cash-multiple me-1"></i> REQUEST WITHDRAWAL
                         </a>

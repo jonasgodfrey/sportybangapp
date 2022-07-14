@@ -3,7 +3,7 @@
 * Copyright (c) 2019 Filament Group; Licensed MIT */
 /*! Shoestring - v2.0.0 - 2017-02-14
 * http://github.com/filamentgroup/shoestring/
-* Copyright (c) 2017 Scott Jehl, Filament Group, Inc; Licensed MIT & GPLv2 */ 
+* Copyright (c) 2017 Scott Jehl, Filament Group, Inc; Licensed MIT & GPLv2 */
 (function( factory ) {
 	if( typeof define === 'function' && define.amd ) {
 			// AMD. Register as an anonymous module.
@@ -571,8 +571,8 @@
 		 * **NOTE** Please use the [css](../css.js.html) method instead.
 		 *
 		 * @method _getStyle
-		 * @param {HTMLElement} element The element we want the style property for.
-		 * @param {string} property The css property we want the style for.
+		 * @param {HTMLElement} element The element we want the style account_details for.
+		 * @param {string} property The css account_details we want the style for.
 		 */
 		shoestring._getStyle = function( element, property ) {
 			var convert, value, j, k;
@@ -630,8 +630,8 @@
 		 *
 		 * @method _setStyle
 		 * @param {HTMLElement} element The element we want to style.
-		 * @param {string} property The property being used to style the element.
-		 * @param {string} value The css value for the style property.
+		 * @param {string} property The account_details being used to style the element.
+		 * @param {string} value The css value for the style account_details.
 		 */
 		shoestring._setStyle = function( element, property, value ) {
 			var convertedProperty = convertPropertyName(property);
@@ -653,12 +653,12 @@
 
 
 	/**
-	 * Get the compute style property of the first element or set the value of a style property
+	 * Get the compute style account_details of the first element or set the value of a style account_details
 	 * on all elements in the set.
 	 *
 	 * @method _setStyle
-	 * @param {string} property The property being used to style the element.
-	 * @param {string|undefined} value The css value for the style property.
+	 * @param {string} property The account_details being used to style the element.
+	 * @param {string|undefined} value The css value for the style account_details.
 	 * @return {string|shoestring}
 	 * @this shoestring
 	 */
@@ -934,7 +934,7 @@
 	 * @this shoestring
 	 */
 	shoestring.fn.next = function(){
-		
+
 		var result = [];
 
 		// TODO need to implement map
@@ -1050,7 +1050,7 @@
 	 * @this shoestring
 	 */
 	shoestring.fn.prev = function(){
-		
+
 		var result = [];
 
 		// TODO need to implement map
@@ -1090,7 +1090,7 @@
 	 * @this shoestring
 	 */
 	shoestring.fn.prevAll = function(){
-		
+
 		var result = [];
 
 		this.each(function() {
@@ -1213,7 +1213,7 @@
 	 * @this shoestring
 	 */
 	shoestring.fn.siblings = function(){
-		
+
 		if( !this.length ) {
 			return shoestring( [] );
 		}
@@ -1271,7 +1271,7 @@
 	 * @this shoestring
 	 */
 	shoestring.fn.text = function() {
-		
+
 		return getText( this );
 	};
 
@@ -1329,7 +1329,7 @@
 
 
 	/**
-	 * Private function for setting/getting the offset property for height/width.
+	 * Private function for setting/getting the offset account_details for height/width.
 	 *
 	 * **NOTE** Please use the [width](width.js.html) or [height](height.js.html) methods instead.
 	 *
@@ -1529,7 +1529,7 @@
 
 	shoestring.fn.on = shoestring.fn.bind;
 
-	
+
 
 
 	/**
@@ -1542,7 +1542,7 @@
 	 */
 	shoestring.fn.unbind = function( event, callback ){
 
-		
+
 		var evts = event ? event.split( " " ) : [];
 
 		return this.each(function(){

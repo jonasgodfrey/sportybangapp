@@ -86,13 +86,13 @@ define(["eve"], function(eve) {
         Paper = function () {
             /*\
              * Paper.ca
-             [ property (object) ]
+             [ account_details (object) ]
              **
              * Shortcut for @Paper.customAttributes
             \*/
             /*\
              * Paper.customAttributes
-             [ property (object) ]
+             [ account_details (object) ]
              **
              * If you have a set of attributes that you would like to represent
              * as a function of some number you can do it easily with custom attributes:
@@ -312,7 +312,7 @@ define(["eve"], function(eve) {
     R._g = g;
     /*\
      * Raphael.type
-     [ property (string) ]
+     [ account_details (string) ]
      **
      * Can be “SVG”, “VML” or empty, depending on browser support.
     \*/
@@ -330,13 +330,13 @@ define(["eve"], function(eve) {
     }
     /*\
      * Raphael.svg
-     [ property (boolean) ]
+     [ account_details (boolean) ]
      **
      * `true` if browser supports SVG.
     \*/
     /*\
      * Raphael.vml
-     [ property (boolean) ]
+     [ account_details (boolean) ]
      **
      * `true` if browser supports VML.
     \*/
@@ -344,7 +344,7 @@ define(["eve"], function(eve) {
     R._Paper = Paper;
     /*\
      * Raphael.fn
-     [ property (object) ]
+     [ account_details (object) ]
      **
      * You can add your own method to the canvas. For example if you want to draw a pie chart,
      * you can create your own pie chart function and ship it as a Raphaël plugin. To do this
@@ -2305,7 +2305,7 @@ define(["eve"], function(eve) {
 
             /*\
              * Element.matrix
-             [ property (object) ]
+             [ account_details (object) ]
              **
              * Keeps @Matrix object, which represents element transformation
             \*/
@@ -2830,7 +2830,7 @@ define(["eve"], function(eve) {
     },
     /*\
      * Raphael.el
-     [ property (object) ]
+     [ account_details (object) ]
      **
      * You can add your own method to elements. This is useful when you want to hack default functionality or
      * want to wrap some common transformation or attributes in one method. In difference to canvas methods,
@@ -3522,20 +3522,20 @@ define(["eve"], function(eve) {
     };
     /*\
      * Paper.top
-     [ property ]
+     [ account_details ]
      **
      * Points to the topmost element on the paper
     \*/
     /*\
      * Paper.bottom
-     [ property ]
+     [ account_details ]
      **
      * Points to the bottom element on the paper
     \*/
     paperproto.top = paperproto.bottom = null;
     /*\
      * Paper.raphael
-     [ property ]
+     [ account_details ]
      **
      * Points to the @Raphael object/function
     \*/
@@ -4013,7 +4013,7 @@ define(["eve"], function(eve) {
     };
     /*\
      * Raphael.easing_formulas
-     [ property ]
+     [ account_details ]
      **
      * Object that contains easing formulas for animation. You could extend it with your own. By default it has following list of easing:
      # <ul>
@@ -5363,7 +5363,7 @@ define(["eve"], function(eve) {
         if (oldRaphael.was) {
             g.win.Raphael = oldRaphael.is;
         } else {
-            // IE8 raises an error when deleting window property
+            // IE8 raises an error when deleting window account_details
             window.Raphael = undefined;
             try {
                 delete window.Raphael;
@@ -5373,7 +5373,7 @@ define(["eve"], function(eve) {
     };
     /*\
      * Raphael.st
-     [ property (object) ]
+     [ account_details (object) ]
      **
      * You can add your own method to elements and sets. It is wise to add a set method for each element method
      * you added, so you will be able to call the same method on sets too.

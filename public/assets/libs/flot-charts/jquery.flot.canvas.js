@@ -130,7 +130,7 @@ browser, but needs to redraw with canvas text when exporting as an image.
 		//         text: Text on this line.
 		//     }],
 		//     font: {
-		//         definition: Canvas font property string.
+		//         definition: Canvas font account_details string.
 		//         color: Color of the text.
 		//     },
 		// }

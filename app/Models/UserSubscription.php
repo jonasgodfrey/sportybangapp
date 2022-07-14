@@ -16,7 +16,8 @@ class UserSubscription extends Model
         'status',
         'plan_type',
         'total_units_no',
-        'amount'
+        'amount',
+        'output_amount'
     ];
 
     public function user()

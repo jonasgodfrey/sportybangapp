@@ -26,22 +26,22 @@ class RolesTableSeeder extends Seeder
             [
                 'name' => 'manager',
                 'description' =>
-                    'A user that manages the property.',
+                    'A user that manages the account_details.',
             ],
             [
                 'name' => 'accountant',
                 'description' =>
-                    'A user that manages the financial assets of the property.',
+                    'A user that manages the financial assets of the account_details.',
             ],
             [
                 'name' => 'artisan',
                 'description' =>
-                    'A user that carries out maintenance/repairs of property infrastructure.',
+                    'A user that carries out maintenance/repairs of account_details infrastructure.',
             ],
             [
                 'name' => 'tenant',
                 'description' =>
-                    'A user that rents out a unit in a property.',
+                    'A user that rents out a unit in a account_details.',
             ],
         ]);
 

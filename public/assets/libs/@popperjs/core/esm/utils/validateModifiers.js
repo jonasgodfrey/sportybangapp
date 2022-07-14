@@ -1,6 +1,6 @@
 import format from "./format.js";
 import { modifierPhases } from "../enums.js";
-var INVALID_MODIFIER_ERROR = 'Popper: modifier "%s" provided an invalid %s property, expected %s but got %s';
+var INVALID_MODIFIER_ERROR = 'Popper: modifier "%s" provided an invalid %s account_details, expected %s but got %s';
 var MISSING_DEPENDENCY_ERROR = 'Popper: modifier "%s" requires "%s", but "%s" modifier is not available';
 var VALID_PROPERTIES = ['name', 'enabled', 'phase', 'fn', 'effect', 'requires', 'options'];
 export default function validateModifiers(modifiers) {
@@ -59,7 +59,7 @@ export default function validateModifiers(modifiers) {
           break;
 
         default:
-          console.error("PopperJS: an invalid property has been provided to the \"" + modifier.name + "\" modifier, valid properties are " + VALID_PROPERTIES.map(function (s) {
+          console.error("PopperJS: an invalid account_details has been provided to the \"" + modifier.name + "\" modifier, valid properties are " + VALID_PROPERTIES.map(function (s) {
             return "\"" + s + "\"";
           }).join(', ') + "; but \"" + key + "\" was provided.");
       }

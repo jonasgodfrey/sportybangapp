@@ -7,9 +7,11 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class ReminderEmail extends Mailable
+class WithdrawalRequestEmail extends Mailable
 {
     use Queueable, SerializesModels;
+
+    private $data;
 
     /**
      * Create a new message instance.
@@ -18,9 +20,7 @@ class ReminderEmail extends Mailable
      */
     public function __construct($data)
     {
-        //
         $this->data = $data;
-
     }
 
     /**
@@ -30,10 +30,8 @@ class ReminderEmail extends Mailable
      */
     public function build()
     {
-        return $this->markdown('mails.payment-reminder',[
-
+        return $this->markdown('mails.withdrawal-request',[
             'data' => $this->data,
-
         ]);
     }
 }

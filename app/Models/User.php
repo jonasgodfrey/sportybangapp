@@ -61,28 +61,22 @@ class User extends Authenticatable
 
     public function subscription()
     {
-        return $this->hasOne(UserSubscription::class, 'user_id');
+        return $this->hasOne(UserSubscription::class, 'user_id')->latest();
     }
 
-    public function properties(): \Illuminate\Database\Eloquent\Relations\HasMany
-    {
-        return $this->hasMany(Property::class, 'ownerId');
+    final public function subscriptions(): \Illuminate\Database\Eloquent\Relations\HasMany {
+        return $this->hasMany(UserSubscription::class, 'user_id');
     }
 
-
-    public function units(): \Illuminate\Database\Eloquent\Relations\HasMany
-    {
-        return $this->hasMany(Unit::class, 'owner_id');
+    final public function transactions(): \Illuminate\Database\Eloquent\Relations\HasMany {
+        return $this->hasMany(Transactions::class)->orderByDesc('id');
+    }
+    final public function transaction(): \Illuminate\Database\Eloquent\Relations\HasOne {
+        return $this->hasOne(Transactions::class)->latest();
     }
 
-    public function tenants(): \Illuminate\Database\Eloquent\Relations\HasManyThrough
-    {
-        return $this->hasManyThrough(Tenant::class, Unit::class, 'owner_id', 'unitId');
-    }
-
-    public function tenant_payments(): \Illuminate\Database\Eloquent\Relations\HasManyThrough
-    {
-        return $this->hasManyThrough(PaymentRecord::class, Tenant::class, 'id', 'tenant_id');
+    final public function bank_account_detail(): \Illuminate\Database\Eloquent\Relations\HasOne {
+        return $this->hasOne(AccountDetail::class);
     }
 
     public function hasAnyRoles($roles): bool

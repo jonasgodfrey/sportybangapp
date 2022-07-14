@@ -29,7 +29,7 @@
                         <div class="card-body">
                             <div class="dropdown float-end">
                                 <a href="#" class="dropdown-toggle arrow-none card-drop" data-bs-toggle="dropdown"
-                                    aria-expanded="false">
+                                   aria-expanded="false">
                                     <i class="mdi mdi-dots-vertical"></i>
                                 </a>
 
@@ -40,13 +40,13 @@
                             <div class="widget-chart-1">
                                 <div class="widget-chart-box-1 float-start" dir="ltr">
                                     <input data-plugin="knob" data-width="70" data-height="70" data-fgColor="#f05050 "
-                                        data-bgColor="#F9B9B9" value="{{ $properties }}" data-skin="tron"
-                                        data-angleOffset="180" data-readOnly=true data-thickness=".15" />
+                                           data-bgColor="#F9B9B9" value="{{ $total_investments_count }}" data-skin="tron"
+                                           data-angleOffset="180" data-readOnly=true data-thickness=".15"/>
                                 </div>
 
 
                                 <div class="widget-detail-1 text-end">
-                                    <h2 class="fw-normal pt-2 mb-1"> ₦{{ $properties }} </h2>
+                                    <h2 class="fw-normal pt-2 mb-1"> ₦{{ $total_investments_amount }} </h2>
                                 </div>
                             </div>
                         </div>
@@ -58,7 +58,7 @@
                         <div class="card-body">
                             <div class="dropdown float-end">
                                 <a href="#" class="dropdown-toggle arrow-none card-drop" data-bs-toggle="dropdown"
-                                    aria-expanded="false">
+                                   aria-expanded="false">
                                     <i class="mdi mdi-dots-vertical"></i>
                                 </a>
 
@@ -69,13 +69,13 @@
                             <div class="widget-chart-1">
                                 <div class="widget-chart-box-1 float-start" dir="ltr">
                                     <input data-plugin="knob" data-width="70" data-height="70" data-fgColor="#f05050 "
-                                        data-bgColor="#FF00CC" value=" {{ $units }}" data-skin="tron"
-                                        data-angleOffset="180" data-readOnly=true data-thickness=".15" />
+                                           data-bgColor="#FF00CC" value=" {{ $total_earnings }}" data-skin="tron"
+                                           data-angleOffset="180" data-readOnly=true data-thickness=".15"/>
                                 </div>
 
 
                                 <div class="widget-detail-1 text-end">
-                                    <h2 class="fw-normal pt-2 mb-1"> ₦{{ $units }} </h2>
+                                    <h2 class="fw-normal pt-2 mb-1"> ₦{{ $total_earnings }} </h2>
                                 </div>
                             </div>
                         </div>
@@ -86,7 +86,7 @@
                         <div class="card-body">
                             <div class="dropdown float-end">
                                 <a href="#" class="dropdown-toggle arrow-none card-drop" data-bs-toggle="dropdown"
-                                    aria-expanded="false">
+                                   aria-expanded="false">
                                     <i class="mdi mdi-dots-vertical"></i>
                                 </a>
 
@@ -97,38 +97,35 @@
                             <div class="widget-chart-1">
                                 <div class="widget-chart-box-1 float-start" dir="ltr">
                                     <input data-plugin="knob" data-width="70" data-height="70" data-fgColor="#f05050 "
-                                        data-bgColor="#4300A3" value=" {{ $tenants_num }}" data-skin="tron"
-                                        data-angleOffset="180" data-readOnly=true data-thickness=".15" />
+                                           data-bgColor="#4300A3" value=" {{ $total_referrals }}" data-skin="tron"
+                                           data-angleOffset="180" data-readOnly=true data-thickness=".15"/>
                                 </div>
 
 
                                 <div class="widget-detail-1 text-end">
-                                    <h2 class="fw-normal pt-2 mb-1"> {{ $tenants_num }} </h2>
+                                    <h2 class="fw-normal pt-2 mb-1"> {{ $total_referrals }} </h2>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div><!-- end col -->
-                
+
 
             </div>
-            <!-- end row -->            
-
-
-            
-
+            <!-- end row -->
 
             <div class="row">
 
                 <div class="col-xl-12">
                     <center>
-                    <a href="/subscription" class="btn btn-lg btn-primary">Subscribe Here</a>
-                    </center><br>
+                        <a href="/subscription" class="btn btn-lg btn-primary">Subscribe Here</a>
+                    </center>
+                    <br>
                     <div class="card">
                         <div class="card-body">
                             <div class="dropdown float-end">
                                 <a href="#" class="dropdown-toggle arrow-none card-drop" data-bs-toggle="dropdown"
-                                    aria-expanded="false">
+                                   aria-expanded="false">
                                     <i class="mdi mdi-dots-vertical"></i>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-end">
@@ -148,38 +145,35 @@
                             <div class="table-responsive">
                                 <table id="datatable-buttons" class="table table-hover mb-0 dt-responsive nowrap">
                                     <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Investor</th>
+                                        <th>Amount</th>
+                                        <th>Transaction Type</th>
+                                        <th>Action Date</th>
+                                        <th>Status</th>
+
+                                    </tr>
+                                    </thead>
+                                   @php
+                                       $count = 0;
+                                   @endphp
+                                    <tbody>
+                                    @forelse ($transactions as $transaction)
+                                        @php
+                                            $count++;
+                                        @endphp
                                         <tr>
-                                            <th>#</th>
-                                            <th>Investor</th>
-                                            <th>Amount</th>                                            
-                                            <th>Start Date</th>
-                                            <th>Withdrawal Date</th>
-                                            <th>Status</th>
+                                            <td>{{$count}}</td>
+                                            <td>{{$transaction->name}}</td>
+                                            <td>₦{{$transaction->amount}}</td>
+                                            <td style="text-transform: capitalize"> {{$transaction->transaction_type}}</td>
+                                            <td>{{\Carbon\Carbon::parse($transaction->action_date)->format( 'M d Y' )}}</td>
+                                            <td><span class="badge bg-success">{{$transaction->status}}</span></td>
 
                                         </tr>
-                                    </thead>
-                                    <tbody>
-                                        
-                                            <tr>
-                                                <td>1</td>
-                                                <td>Austin Solomon</td>
-                                                <td>50000</td>                                                
-                                                <td>12/12/2021</td>                                               
-                                                <td>17/12/2021</td>                                               
-                                                <td><span class="badge bg-success">Withdrawn</span></td>                                              
-
-                                            </tr>
-
-                                            <tr>
-                                                <td>2</td>
-                                                <td>Austin Solomon</td>
-                                                <td>50000</td>                                                
-                                                <td>12/01/2021</td>                                               
-                                                <td>17/01/2021</td>                                               
-                                                <td><span class="badge bg-warning">In Progress</span></td>                                              
-
-                                            </tr>
-                                       
+                                    @empty
+                                    @endforelse
 
                                     </tbody>
                                 </table>

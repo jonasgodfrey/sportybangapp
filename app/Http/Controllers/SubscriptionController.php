@@ -7,43 +7,28 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
 
-class SubscriptionController extends Controller
-{
-    public function index()
-    {
+class SubscriptionController extends Controller {
+    public function index() {
         $user = Auth::user();
-        $owner_id = $user->owner_id;
-        $owner = User::where('id', $owner_id)->first();
 
-        if (Gate::allows('admin')) {
-
-            if (Gate::allows('is_subscribed')) {
-                abort('404');
-            }
-            return view('subscription.index');
-        } else {
-
-            if ($owner->subscriptionStatus('active')) {
-
-                abort('404');
-            } else {
-
-                return view('subscription.users');
-            }
+        if( Gate::allows( 'is_subscribed' ) ) {
+            return view( 'subscription.active' );
         }
+
+        return view( 'subscription.index' );
+
     }
 
-    public function users()
-    {
+    public function users() {
         $user = Auth::user();
 
         $owner_id = $user->owner_id;
-        $owner = User::where('id', $owner_id)->first();
+        $owner = User::where( 'id', $owner_id )->first();
 
-        if ($owner->subscriptionStatus('active')) {
-            abort('404');
+        if( $owner->subscriptionStatus( 'active' ) ) {
+            abort( '404' );
         } else {
-            return redirect('subscription.users');
+            return redirect( 'subscription.users' );
         }
     }
 }

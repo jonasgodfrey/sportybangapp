@@ -147,7 +147,7 @@ export function popperGenerator(generatorOptions) {
         // stale/incorrect
 
         state.reset = false;
-        state.placement = state.options.placement; // On each update cycle, the `modifiersData` property for each modifier
+        state.placement = state.options.placement; // On each update cycle, the `modifiersData` account_details for each modifier
         // is filled with the initial data specified by the modifier. This means
         // it doesn't persist and is fresh on each update.
         // To ensure persistent data, use `${name}#persistent`

@@ -200,7 +200,7 @@ function clamp( value, prop, allowEmpty ) {
 		return (value + type.mod) % type.mod;
 	}
 
-	// for now all property types without mod have min and max
+	// for now all account_details types without mod have min and max
 	return 0 > value ? 0 : type.max < value ? type.max : value;
 }
 

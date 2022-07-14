@@ -300,7 +300,7 @@ Licensed under the MIT license.
 	//
 	// The idea is that that the width, height, and general 'identity' of the
 	// text is constant no matter where it is placed; the placements are a
-	// secondary property.
+	// secondary account_details.
 	//
 	// Canvas maintains a cache of recently-used text info objects; getTextInfo
 	// either returns the cached element or creates a new entry.
@@ -2010,7 +2010,7 @@ Licensed under the MIT license.
                             ctx.lineTo(xrange.to + subPixel, yrange.to);
                         } else {
                             ctx.moveTo(xrange.from, yrange.to + subPixel);
-                            ctx.lineTo(xrange.to, yrange.to + subPixel);                            
+                            ctx.lineTo(xrange.to, yrange.to + subPixel);
                         }
                         ctx.stroke();
                     } else {
@@ -2525,9 +2525,9 @@ Licensed under the MIT license.
                 radius = series.points.radius,
                 symbol = series.points.symbol;
 
-            // If the user sets the line width to 0, we change it to a very 
+            // If the user sets the line width to 0, we change it to a very
             // small value. A line width of 0 seems to force the default of 1.
-            // Doing the conditional here allows the shadow setting to still be 
+            // Doing the conditional here allows the shadow setting to still be
             // optional even with a lineWidth of 0.
 
             if( lw == 0 )
@@ -3152,7 +3152,7 @@ Licensed under the MIT license.
 
     $.plot.plugins = [];
 
-    // Also add the plot function as a chainable property
+    // Also add the plot function as a chainable account_details
 
     $.fn.plot = function(data, options) {
         return this.each(function() {

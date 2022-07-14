@@ -390,7 +390,7 @@ function format(str) {
   }, str);
 }
 
-var INVALID_MODIFIER_ERROR = 'Popper: modifier "%s" provided an invalid %s property, expected %s but got %s';
+var INVALID_MODIFIER_ERROR = 'Popper: modifier "%s" provided an invalid %s account_details, expected %s but got %s';
 var MISSING_DEPENDENCY_ERROR = 'Popper: modifier "%s" requires "%s", but "%s" modifier is not available';
 var VALID_PROPERTIES = ['name', 'enabled', 'phase', 'fn', 'effect', 'requires', 'options'];
 function validateModifiers(modifiers) {
@@ -449,7 +449,7 @@ function validateModifiers(modifiers) {
           break;
 
         default:
-          console.error("PopperJS: an invalid property has been provided to the \"" + modifier.name + "\" modifier, valid properties are " + VALID_PROPERTIES.map(function (s) {
+          console.error("PopperJS: an invalid account_details has been provided to the \"" + modifier.name + "\" modifier, valid properties are " + VALID_PROPERTIES.map(function (s) {
             return "\"" + s + "\"";
           }).join(', ') + "; but \"" + key + "\" was provided.");
       }
@@ -933,7 +933,7 @@ function popperGenerator(generatorOptions) {
         // stale/incorrect
 
         state.reset = false;
-        state.placement = state.options.placement; // On each update cycle, the `modifiersData` property for each modifier
+        state.placement = state.options.placement; // On each update cycle, the `modifiersData` account_details for each modifier
         // is filled with the initial data specified by the modifier. This means
         // it doesn't persist and is fresh on each update.
         // To ensure persistent data, use `${name}#persistent`

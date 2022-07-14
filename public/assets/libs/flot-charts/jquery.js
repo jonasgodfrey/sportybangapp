@@ -438,14 +438,14 @@ jQuery.extend({
 
 	isPlainObject: function( obj ) {
 		// Must be an Object.
-		// Because of IE, we also have to check the presence of the constructor property.
+		// Because of IE, we also have to check the presence of the constructor account_details.
 		// Make sure that DOM nodes and window objects don't pass through, as well
 		if ( !obj || jQuery.type(obj) !== "object" || obj.nodeType || jQuery.isWindow( obj ) ) {
 			return false;
 		}
 
 		try {
-			// Not own constructor property must be Object
+			// Not own constructor account_details must be Object
 			if ( obj.constructor &&
 				!core_hasOwn.call(obj, "constructor") &&
 				!core_hasOwn.call(obj.constructor.prototype, "isPrototypeOf") ) {
@@ -1306,7 +1306,7 @@ jQuery.support = (function() {
 		// (WebKit defaults to "" instead)
 		checkOn: ( input.value === "on" ),
 
-		// Make sure that a selected-by-default option has a working selected property.
+		// Make sure that a selected-by-default option has a working selected account_details.
 		// (WebKit defaults to false instead of true, IE too, if it's in an optgroup)
 		optSelected: opt.selected,
 
@@ -1609,17 +1609,17 @@ jQuery.extend({
 			thisCache[ jQuery.camelCase( name ) ] = data;
 		}
 
-		// Check for both converted-to-camel and non-converted data property names
-		// If a data property was specified
+		// Check for both converted-to-camel and non-converted data account_details names
+		// If a data account_details was specified
 		if ( getByName ) {
 
-			// First Try to find as-is property data
+			// First Try to find as-is account_details data
 			ret = thisCache[ name ];
 
-			// Test for null|undefined property data
+			// Test for null|undefined account_details data
 			if ( ret == null ) {
 
-				// Try to find the camelCased property
+				// Try to find the camelCased account_details
 				ret = thisCache[ jQuery.camelCase( name ) ];
 			}
 		} else {
@@ -2018,7 +2018,7 @@ jQuery.fn.extend({
 	removeProp: function( name ) {
 		name = jQuery.propFix[ name ] || name;
 		return this.each(function() {
-			// try/catch handles cases where IE balks (such as removing a property on window)
+			// try/catch handles cases where IE balks (such as removing a account_details on window)
 			try {
 				this[ name ] = undefined;
 				delete this[ name ];
@@ -2349,7 +2349,7 @@ jQuery.extend({
 					}
 					elem.removeAttribute( getSetAttribute ? name : propName );
 
-					// Set corresponding property to false for boolean attributes
+					// Set corresponding account_details to false for boolean attributes
 					if ( isBool && propName in elem ) {
 						elem[ propName ] = false;
 					}
@@ -2361,9 +2361,9 @@ jQuery.extend({
 	attrHooks: {
 		type: {
 			set: function( elem, value ) {
-				// We can't allow the type property to be changed (since it causes problems in IE)
+				// We can't allow the type account_details to be changed (since it causes problems in IE)
 				if ( rtype.test( elem.nodeName ) && elem.parentNode ) {
-					jQuery.error( "type property can't be changed" );
+					jQuery.error( "type account_details can't be changed" );
 				} else if ( !jQuery.support.radioValue && value === "radio" && jQuery.nodeName(elem, "input") ) {
 					// Setting the type on a radio button after the value resets the value in IE6-9
 					// Reset value to it's default in case type is set after value
@@ -2377,7 +2377,7 @@ jQuery.extend({
 				}
 			}
 		},
-		// Use the value property for back compat
+		// Use the value account_details for back compat
 		// Use the nodeHook for button elements in IE6/7 (#1954)
 		value: {
 			get: function( elem, name ) {
@@ -2483,7 +2483,7 @@ boolHook = {
 			jQuery.removeAttr( elem, name );
 		} else {
 			// value is true since we know at this point it's type boolean and not false
-			// Set boolean attributes to the same name and set the DOM property
+			// Set boolean attributes to the same name and set the DOM account_details
 			propName = jQuery.propFix[ name ] || name;
 			if ( propName in elem ) {
 				// Only set the IDL specifically if it already exists on the element
@@ -2569,7 +2569,7 @@ if ( !jQuery.support.style ) {
 	jQuery.attrHooks.style = {
 		get: function( elem ) {
 			// Return undefined in the case of empty string
-			// Normalize to lowercase since IE uppercases css property names
+			// Normalize to lowercase since IE uppercases css account_details names
 			return elem.style.cssText.toLowerCase() || undefined;
 		},
 		set: function( elem, value ) {
@@ -2578,8 +2578,8 @@ if ( !jQuery.support.style ) {
 	};
 }
 
-// Safari mis-reports the default selected property of an option
-// Accessing the parent's selectedIndex property fixes it
+// Safari mis-reports the default selected account_details of an option
+// Accessing the parent's selectedIndex account_details fixes it
 if ( !jQuery.support.optSelected ) {
 	jQuery.propHooks.selected = jQuery.extend( jQuery.propHooks.selected, {
 		get: function( elem ) {
@@ -2676,7 +2676,7 @@ jQuery.event = {
 					jQuery.event.dispatch.apply( eventHandle.elem, arguments ) :
 					undefined;
 			};
-			// Add elem as a property of the handle fn to prevent a memory leak with IE non-native events
+			// Add elem as a account_details of the handle fn to prevent a memory leak with IE non-native events
 			eventHandle.elem = elem;
 		}
 
@@ -3145,7 +3145,7 @@ jQuery.event = {
 			event[ prop ] = originalEvent[ prop ];
 		}
 
-		// Fix target property, if necessary (#1925, IE 6/7/8 & Safari2)
+		// Fix target account_details, if necessary (#1925, IE 6/7/8 & Safari2)
 		if ( !event.target ) {
 			event.target = originalEvent.srcElement || document;
 		}
@@ -3229,7 +3229,7 @@ jQuery.removeEvent = document.removeEventListener ?
 		if ( elem.detachEvent ) {
 
 			// #8545, #7054, preventing memory leaks for custom events in IE6-8
-			// detachEvent needed property on element, by name of that event, to properly expose it to GC
+			// detachEvent needed account_details on element, by name of that event, to properly expose it to GC
 			if ( typeof elem[ name ] === "undefined" ) {
 				elem[ name ] = null;
 			}
@@ -3293,7 +3293,7 @@ jQuery.Event.prototype = {
 		if ( e.preventDefault ) {
 			e.preventDefault();
 
-		// otherwise set the returnValue property of the original event to false (IE)
+		// otherwise set the returnValue account_details of the original event to false (IE)
 		} else {
 			e.returnValue = false;
 		}
@@ -3309,7 +3309,7 @@ jQuery.Event.prototype = {
 		if ( e.stopPropagation ) {
 			e.stopPropagation();
 		}
-		// otherwise set the cancelBubble property of the original event to true (IE)
+		// otherwise set the cancelBubble account_details of the original event to true (IE)
 		e.cancelBubble = true;
 	},
 	stopImmediatePropagation: function() {
@@ -4443,7 +4443,7 @@ Expr = Sizzle.selectors = {
 		},
 
 		"selected": function( elem ) {
-			// Accessing this property makes selected-by-default
+			// Accessing this account_details makes selected-by-default
 			// options in Safari work properly
 			if ( elem.parentNode ) {
 				elem.parentNode.selectedIndex;
@@ -6217,7 +6217,7 @@ function getAll( elem ) {
 	}
 }
 
-// Used in clean, fixes the defaultChecked property
+// Used in clean, fixes the defaultChecked account_details
 function fixDefaultChecked( elem ) {
 	if ( rcheckableType.test( elem.type ) ) {
 		elem.defaultChecked = elem.checked;
@@ -6254,7 +6254,7 @@ jQuery.extend({
 			srcElements = getAll( elem );
 			destElements = getAll( clone );
 
-			// Weird iteration because IE will replace the length property
+			// Weird iteration because IE will replace the length account_details
 			// with an element if you are cloning the body and one of the
 			// elements on the page has a name or id of "length"
 			for ( i = 0; srcElements[i]; ++i ) {
@@ -6559,7 +6559,7 @@ var curCSS, iframe, iframeDoc,
 
 	eventsToggle = jQuery.fn.toggle;
 
-// return a css property mapped to a potentially vendor prefixed property
+// return a css account_details mapped to a potentially vendor prefixed account_details
 function vendorPropName( style, name ) {
 
 	// shortcut for names that are not vendor prefixed
@@ -6668,8 +6668,8 @@ jQuery.fn.extend({
 });
 
 jQuery.extend({
-	// Add in style property hooks for overriding the default
-	// behavior of getting and setting a style property
+	// Add in style account_details hooks for overriding the default
+	// behavior of getting and setting a style account_details
 	cssHooks: {
 		opacity: {
 			get: function( elem, computed ) {
@@ -6698,11 +6698,11 @@ jQuery.extend({
 	// Add in properties whose names you wish to fix before
 	// setting or getting the value
 	cssProps: {
-		// normalize float css property
+		// normalize float css account_details
 		"float": jQuery.support.cssFloat ? "cssFloat" : "styleFloat"
 	},
 
-	// Get and set the style property on a DOM Node
+	// Get and set the style account_details on a DOM Node
 	style: function( elem, name, value, extra ) {
 		// Don't set styles on text and comment nodes
 		if ( !elem || elem.nodeType === 3 || elem.nodeType === 8 || !elem.style ) {
@@ -6948,7 +6948,7 @@ function augmentWidthOrHeight( elem, name, extra, isBorderBox ) {
 
 function getWidthOrHeight( elem, name, extra ) {
 
-	// Start with offset property, which is equivalent to the border-box value
+	// Start with offset account_details, which is equivalent to the border-box value
 	var val = name === "width" ? elem.offsetWidth : elem.offsetHeight,
 		valueIsBorderBox = true,
 		isBorderBox = jQuery.support.boxSizing && jQuery.css( elem, "boxSizing" ) === "border-box";
@@ -8573,7 +8573,7 @@ var fxNow, timerId,
 				// We need to compute starting value
 				if ( unit !== "px" && start ) {
 					// Iteratively approximate from a nonzero starting point
-					// Prefer the current property, because this process will be trivial if it uses the same units
+					// Prefer the current account_details, because this process will be trivial if it uses the same units
 					// Fallback to end or a simple constant
 					start = jQuery.css( tween.elem, prop, true ) || end || 1;
 
@@ -8616,7 +8616,7 @@ function createTweens( animation, props ) {
 		for ( ; index < length; index++ ) {
 			if ( collection[ index ].call( animation, prop, value ) ) {
 
-				// we're done with this property
+				// we're done with this account_details
 				return;
 			}
 		}
@@ -8830,7 +8830,7 @@ function defaultPrefilter( elem, props, opts ) {
 		// overflowY are set to the same value
 		opts.overflow = [ style.overflow, style.overflowX, style.overflowY ];
 
-		// Set display property to inline-block for height/width
+		// Set display account_details to inline-block for height/width
 		// animations on inline elements that are having width/height animated
 		if ( jQuery.css( elem, "display" ) === "inline" &&
 				jQuery.css( elem, "float" ) === "none" ) {
@@ -9030,7 +9030,7 @@ jQuery.fn.extend({
 		var empty = jQuery.isEmptyObject( prop ),
 			optall = jQuery.speed( speed, easing, callback ),
 			doAnimation = function() {
-				// Operate on a copy of prop so per-property easing won't be lost
+				// Operate on a copy of prop so per-account_details easing won't be lost
 				var anim = Animation( this, jQuery.extend( {}, prop ), optall );
 
 				// Empty animations resolve immediately

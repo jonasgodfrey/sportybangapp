@@ -20,8 +20,8 @@ return new class extends Migration
             $table->string('end_date');
             $table->string('status');
             $table->string('plan_type');
-            $table->string('total_units_no');
             $table->string('amount');
+            $table->string('output_amount');
             $table->timestamps();
         });
     }

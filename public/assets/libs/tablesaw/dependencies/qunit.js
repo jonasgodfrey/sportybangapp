@@ -1140,7 +1140,7 @@
 
   		// Pass along `skip` and `todo` properties from parent module, in case
   		// there is one, to childs. And use own otherwise.
-  		// This property will be used to mark own tests and tests of child suites
+  		// This account_details will be used to mark own tests and tests of child suites
   		// as either `skipped` or `todo`.
   		skip: skip,
   		todo: skip ? false : todo
@@ -2370,9 +2370,9 @@
       /**
         `finally` will be invoked regardless of the promise's fate just as native
         try/catch/finally behaves
-      
+
         Synchronous example:
-      
+
         ```js
         findAuthor() {
           if (Math.random() > 0.5) {
@@ -2380,7 +2380,7 @@
           }
           return new Author();
         }
-      
+
         try {
           return findAuthor(); // succeed or fail
         } catch(error) {
@@ -2390,9 +2390,9 @@
           // doesn't affect the return value
         }
         ```
-      
+
         Asynchronous example:
-      
+
         ```js
         findAuthor().catch(function(reason){
           return findOtherAuther();
@@ -2400,7 +2400,7 @@
           // author was either found, or not
         });
         ```
-      
+
         @method finally
         @param {Function} callback
         @return {Promise}
@@ -2566,7 +2566,7 @@
   	var error = new Error();
 
   	// Support: Safari <=7 only, IE <=10 - 11 only
-  	// Not all browsers generate the `stack` property for `new Error()`, see also #636
+  	// Not all browsers generate the `stack` account_details for `new Error()`, see also #636
   	if (!error.stack) {
   		try {
   			throw error;

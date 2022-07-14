@@ -178,7 +178,7 @@ function create(input, value) {
         throw new ParchmentError("Unable to create " + input + " blot");
     }
     var BlotClass = match;
-    var node = 
+    var node =
     // @ts-ignore
     input instanceof Node || input['nodeType'] === Node.TEXT_NODE ? input : BlotClass.create(value);
     return new BlotClass(node, value);
@@ -654,7 +654,7 @@ var isPlainObject = function isPlainObject(obj) {
 
 	var hasOwnConstructor = hasOwn.call(obj, 'constructor');
 	var hasIsPrototypeOf = obj.constructor && obj.constructor.prototype && hasOwn.call(obj.constructor.prototype, 'isPrototypeOf');
-	// Not own constructor property must be Object
+	// Not own constructor account_details must be Object
 	if (obj.constructor && !hasOwnConstructor && !hasIsPrototypeOf) {
 		return false;
 	}
@@ -667,7 +667,7 @@ var isPlainObject = function isPlainObject(obj) {
 	return typeof key === 'undefined' || hasOwn.call(obj, key);
 };
 
-// If name is '__proto__', and Object.defineProperty is available, define __proto__ as an own property on target
+// If name is '__proto__', and Object.defineProperty is available, define __proto__ as an own account_details on target
 var setProperty = function setProperty(target, options) {
 	if (defineProperty && options.name === '__proto__') {
 		defineProperty(target, options.name, {
@@ -681,14 +681,14 @@ var setProperty = function setProperty(target, options) {
 	}
 };
 
-// Return undefined instead of __proto__ if '__proto__' is not an own property
+// Return undefined instead of __proto__ if '__proto__' is not an own account_details
 var getProperty = function getProperty(obj, name) {
 	if (name === '__proto__') {
 		if (!hasOwn.call(obj, name)) {
 			return void 0;
 		} else if (gOPD) {
 			// In early versions of node, obj['__proto__'] is buggy when obj has
-			// __proto__ as an own property. Object.getOwnPropertyDescriptor() works.
+			// __proto__ as an own account_details. Object.getOwnPropertyDescriptor() works.
 			return gOPD(obj, name).value;
 		}
 	}
@@ -2077,7 +2077,7 @@ var deepEqual = module.exports = function (actual, expected, opts) {
   // determined by having the same number of owned properties (as verified
   // with Object.prototype.hasOwnProperty.call), the same set of keys
   // (although not necessarily the same order), equivalent values for every
-  // corresponding key, and an identical 'prototype' property. Note: this
+  // corresponding key, and an identical 'prototype' account_details. Note: this
   // accounts for both named and indexed properties on Arrays.
   } else {
     return objEquiv(actual, expected, opts);
@@ -2101,7 +2101,7 @@ function objEquiv(a, b, opts) {
   var i, key;
   if (isUndefinedOrNull(a) || isUndefinedOrNull(b))
     return false;
-  // an identical 'prototype' property.
+  // an identical 'prototype' account_details.
   if (a.prototype !== b.prototype) return false;
   //~~~I've managed to break Object.keys through screwy arguments passing.
   //   Converting to array solves the problem.
@@ -4111,7 +4111,7 @@ function clone(parent, circular, depth, prototype, includeNonEnumerable) {
 }
 
 /**
- * Simple flat clone using prototype, accepts only objects, usefull for property
+ * Simple flat clone using prototype, accepts only objects, usefull for account_details
  * override on FLAT configuration object (no nested props).
  *
  * USE WITH CAUTION! This may not behave as you wish if you do not know how this
@@ -7816,7 +7816,7 @@ if (Object.create) {
   Events.prototype = Object.create(null);
 
   //
-  // This hack is needed because the `__proto__` property is still inherited in
+  // This hack is needed because the `__proto__` account_details is still inherited in
   // some old browsers like Android 4, iPhone 5.1, Opera 11 and Safari 5.
   //
   if (!new Events().__proto__) prefix = false;

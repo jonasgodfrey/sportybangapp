@@ -625,7 +625,7 @@ define(["./raphael.core"], function(R) {
             Y = 0;
         /*\
          * Element.node
-         [ property (object) ]
+         [ account_details (object) ]
          **
          * Gives you a reference to the DOM object, so you can assign event handlers or just mess around.
          **
@@ -640,7 +640,7 @@ define(["./raphael.core"], function(R) {
         this[0] = this.node = node;
         /*\
          * Element.raphael
-         [ property (object) ]
+         [ account_details (object) ]
          **
          * Internal reference to @Raphael object. In case it is not available.
          > Usage
@@ -653,7 +653,7 @@ define(["./raphael.core"], function(R) {
         node.raphael = true;
         /*\
          * Element.id
-         [ property (number) ]
+         [ account_details (number) ]
          **
          * Unique id of the element. Especially useful when you want to listen to events of the element,
          * because all events are fired in format `<module>.<action>.<id>`. Also useful for @Paper.getById method.
@@ -673,7 +673,7 @@ define(["./raphael.core"], function(R) {
         this.realPath = null;
         /*\
          * Element.paper
-         [ property (object) ]
+         [ account_details (object) ]
          **
          * Internal reference to “paper” where object drawn. Mainly for use in plugins and element extensions.
          > Usage
@@ -697,7 +697,7 @@ define(["./raphael.core"], function(R) {
         !svg.bottom && (svg.bottom = this);
         /*\
          * Element.prev
-         [ property (object) ]
+         [ account_details (object) ]
          **
          * Reference to the previous element in the hierarchy.
         \*/
@@ -706,7 +706,7 @@ define(["./raphael.core"], function(R) {
         svg.top = this;
         /*\
          * Element.next
-         [ property (object) ]
+         [ account_details (object) ]
          **
          * Reference to the next element in the hierarchy.
         \*/

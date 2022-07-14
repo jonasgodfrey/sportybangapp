@@ -396,7 +396,7 @@ function format(str) {
   }, str);
 }
 
-var INVALID_MODIFIER_ERROR = 'Popper: modifier "%s" provided an invalid %s property, expected %s but got %s';
+var INVALID_MODIFIER_ERROR = 'Popper: modifier "%s" provided an invalid %s account_details, expected %s but got %s';
 var MISSING_DEPENDENCY_ERROR = 'Popper: modifier "%s" requires "%s", but "%s" modifier is not available';
 var VALID_PROPERTIES = ['name', 'enabled', 'phase', 'fn', 'effect', 'requires', 'options'];
 function validateModifiers(modifiers) {
@@ -455,7 +455,7 @@ function validateModifiers(modifiers) {
           break;
 
         default:
-          console.error("PopperJS: an invalid property has been provided to the \"" + modifier.name + "\" modifier, valid properties are " + VALID_PROPERTIES.map(function (s) {
+          console.error("PopperJS: an invalid account_details has been provided to the \"" + modifier.name + "\" modifier, valid properties are " + VALID_PROPERTIES.map(function (s) {
             return "\"" + s + "\"";
           }).join(', ') + "; but \"" + key + "\" was provided.");
       }
@@ -940,7 +940,7 @@ function popperGenerator(generatorOptions) {
         // stale/incorrect
 
         state.reset = false;
-        state.placement = state.options.placement; // On each update cycle, the `modifiersData` property for each modifier
+        state.placement = state.options.placement; // On each update cycle, the `modifiersData` account_details for each modifier
         // is filled with the initial data specified by the modifier. This means
         // it doesn't persist and is fresh on each update.
         // To ensure persistent data, use `${name}#persistent`
@@ -1224,7 +1224,7 @@ function computeStyles(_ref4) {
     if (adaptive && ['transform', 'top', 'right', 'bottom', 'left'].some(function (property) {
       return transitionProperty.indexOf(property) >= 0;
     })) {
-      console.warn(['Popper: Detected CSS transitions on at least one of the following', 'CSS properties: "transform", "top", "right", "bottom", "left".', '\n\n', 'Disable the "computeStyles" modifier\'s `adaptive` option to allow', 'for smooth transitions, or remove these properties from the CSS', 'transition declaration on the popper element if only transitioning', 'opacity or background-color for example.', '\n\n', 'We recommend using the popper element as a wrapper around an inner', 'element that can have any CSS property transitioned for animations.'].join(' '));
+      console.warn(['Popper: Detected CSS transitions on at least one of the following', 'CSS properties: "transform", "top", "right", "bottom", "left".', '\n\n', 'Disable the "computeStyles" modifier\'s `adaptive` option to allow', 'for smooth transitions, or remove these properties from the CSS', 'transition declaration on the popper element if only transitioning', 'opacity or background-color for example.', '\n\n', 'We recommend using the popper element as a wrapper around an inner', 'element that can have any CSS account_details transitioned for animations.'].join(' '));
     }
   }
 
@@ -1278,7 +1278,7 @@ function applyStyles(_ref) {
 
     if (!isHTMLElement(element) || !getNodeName(element)) {
       return;
-    } // Flow doesn't support to extend this property, but it's the most
+    } // Flow doesn't support to extend this account_details, but it's the most
     // effective way to apply styles to an HTMLElement
     // $FlowFixMe[cannot-write]
 

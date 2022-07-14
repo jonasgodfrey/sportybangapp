@@ -5,11 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class UnitType extends Model
+class AccountDetail extends Model
 {
     use HasFactory;
+
     protected $fillable = [
-        'name',
-        'propcatId',
+        'user_id',
+        'account_name',
+        'account_number',
+        'bank_name'
     ];
+
 }

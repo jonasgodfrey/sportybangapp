@@ -17,11 +17,11 @@
                             <blockquote class="blockquote mb-0">
                                 <h4>{{ Auth::user()->name }} welcome to our platform !</h4>
                                 <footer class="blockquote-footer"><h5>
-                                    Note: please contact your administrator for a plan renewal with to proceed to our application</h5></footer>
+                                    Note: please your current subscription plan has to expire before you re-subscribe</h5></footer>
                             </blockquote>
                         </div>
                     </div>
-                   
+
                 </div>
             </div>
 

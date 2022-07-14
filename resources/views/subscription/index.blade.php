@@ -21,12 +21,12 @@
                 </div>
                 <div class="card-body">
                     <blockquote class="blockquote mb-0 text-center">
-                        <h3> <b style="text-transform: capitalize">Welcome Onboard {{ Auth::user()->name }}</b> !</h3>
+                        <h3><b style="text-transform: capitalize">Welcome Onboard {{ Auth::user()->name }}</b> !</h3>
 
                         <footer class="blockquote-footer">
                             <h4 class="text-center justify-center text-red-600">
-                                Please select an Investment plan you are
-                                comfortable with
+                                please select a subscription plan you are
+                                comfortable with to proceed to our application
                             </h4>
                         </footer>
                     </blockquote>
@@ -47,14 +47,35 @@
                                             </div>
                                             <ul class="plan-stats list-unstyled text-center p-3 mb-0">
                                                 <li>30% Returns</li>
-                                                <li>Weekly Basis</li>                                                
+                                                <li>Weekly Basis</li>
                                             </ul>
 
-                                            <div class="text-center">
-                                            <a href="https://paystack.com"
-                                                   class="btn btn-success btn-bordered-success rounded-pill waves-effect waves-light">Pay
-                                                    Now</a>
-                                            </div>
+                                            <form method="POST" action="{{ route('pay') }}" accept-charset="UTF-8" class="form-horizontal"
+                                                  role="form">
+
+                                                <div class="col-md-8 col-md-offset-2">
+                                                    <input type="hidden" name="email"
+                                                           value="{{Auth::user()->email}}"> {{-- required --}}
+                                                    <input type="hidden" name="amount" class="form-control" id="amount" value="500000">
+                                                    <input type="hidden" name="orderID" value="345">
+                                                    <input type="hidden" name="currency" value="NGN">
+                                                    <input type="hidden" name="metadata"
+                                                           value="{{ json_encode($array = ['plan_type' => '1'], JSON_THROW_ON_ERROR) }}">{{-- For other necessary things you want to add to your payload. it is optional though --}}
+                                                    <input type="hidden" name="reference"
+                                                           value="{{ Paystack::genTranxRef() }}"> {{-- required --}}
+                                                    <input type="hidden" name="callback_url" class="form-control"
+                                                           value="{{route('handleGatewayCallback')}}">
+                                                    <input type="hidden" name="_token"
+                                                           value="{{ csrf_token() }}"> {{-- employ this in place of csrf_field only in laravel 5.0 --}}
+
+                                                </div>
+                                                <div class="text-center">
+                                                    <button class="btn  btn-bordered-success btn-success rounded-pill waves-effect waves-light" type="submit" value="Pay Now!">
+                                                        <i class="fa fa-plus-circle fa-lg"></i> Pay Now!
+                                                    </button>
+                                                </div>
+                                            </form>
+
                                         </div>
                                     </div>
                                 </article>
@@ -72,14 +93,35 @@
                                             </div>
                                             <ul class="plan-stats list-unstyled text-center p-3 mb-0">
                                                 <li>30% Returns</li>
-                                                <li>Weekly Basis</li>                                                
+                                                <li>Weekly Basis</li>
                                             </ul>
 
-                                            <div class="text-center">
-                                            <a href="https://paystack.com"
-                                                   class="btn btn-success btn-bordered-success rounded-pill waves-effect waves-light">Pay
-                                                    Now</a>
-                                            </div>
+                                            <form method="POST" action="{{ route('pay') }}" accept-charset="UTF-8" class="form-horizontal"
+                                                  role="form">
+
+                                                <div class="col-md-8 col-md-offset-2">
+                                                    <input type="hidden" name="email"
+                                                           value="{{Auth::user()->email}}"> {{-- required --}}
+                                                    <input type="hidden" name="amount" class="form-control" id="amount" value="1000000">
+                                                    <input type="hidden" name="orderID" value="345">
+                                                    <input type="hidden" name="currency" value="NGN">
+                                                    <input type="hidden" name="metadata"
+                                                           value="{{ json_encode($array = ['plan_type' => '2'], JSON_THROW_ON_ERROR) }}">{{-- For other necessary things you want to add to your payload. it is optional though --}}
+                                                    <input type="hidden" name="reference"
+                                                           value="{{ Paystack::genTranxRef() }}"> {{-- required --}}
+                                                    <input type="hidden" name="callback_url" class="form-control"
+                                                           value="{{route('handleGatewayCallback')}}">
+                                                    <input type="hidden" name="_token"
+                                                           value="{{ csrf_token() }}"> {{-- employ this in place of csrf_field only in laravel 5.0 --}}
+
+                                                </div>
+                                                <div class="text-center">
+                                                    <button class="btn  btn-bordered-success btn-success rounded-pill waves-effect waves-light" type="submit" value="Pay Now!">
+                                                        <i class="fa fa-plus-circle fa-lg"></i> Pay Now!
+                                                    </button>
+                                                </div>
+                                            </form>
+
                                         </div>
                                     </div>
                                 </article>
@@ -96,14 +138,35 @@
                                             </div>
                                             <ul class="plan-stats list-unstyled text-center p-3 mb-0">
                                                 <li>30% Returns</li>
-                                                <li>Weekly Basis</li>                                                
+                                                <li>Weekly Basis</li>
                                             </ul>
 
-                                            <div class="text-center">
-                                                <a href="https://paystack.com"
-                                                   class="btn btn-success btn-bordered-success rounded-pill waves-effect waves-light">Pay
-                                                    Now</a>
-                                            </div>
+                                            <form method="POST" action="{{ route('pay') }}" accept-charset="UTF-8" class="form-horizontal"
+                                                  role="form">
+
+                                                <div class="col-md-8 col-md-offset-2">
+                                                    <input type="hidden" name="email"
+                                                           value="{{Auth::user()->email}}"> {{-- required --}}
+                                                    <input type="hidden" name="amount" class="form-control" id="amount" value="2000000">
+                                                    <input type="hidden" name="orderID" value="345">
+                                                    <input type="hidden" name="currency" value="NGN">
+                                                    <input type="hidden" name="metadata"
+                                                           value="{{ json_encode($array = ['plan_type' => '3'], JSON_THROW_ON_ERROR) }}">{{-- For other necessary things you want to add to your payload. it is optional though --}}
+                                                    <input type="hidden" name="reference"
+                                                           value="{{ Paystack::genTranxRef() }}"> {{-- required --}}
+                                                    <input type="hidden" name="callback_url" class="form-control"
+                                                           value="{{route('handleGatewayCallback')}}">
+                                                    <input type="hidden" name="_token"
+                                                           value="{{ csrf_token() }}"> {{-- employ this in place of csrf_field only in laravel 5.0 --}}
+
+                                                </div>
+                                                <div class="text-center">
+                                                    <button class="btn  btn-bordered-success btn-success rounded-pill waves-effect waves-light" type="submit" value="Pay Now!">
+                                                        <i class="fa fa-plus-circle fa-lg"></i> Pay Now!
+                                                    </button>
+                                                </div>
+                                            </form>
+
                                         </div>
                                     </div>
                                 </article>
@@ -120,14 +183,35 @@
                                             </div>
                                             <ul class="plan-stats list-unstyled text-center p-3 mb-0">
                                                 <li>30% Returns</li>
-                                                <li>Weekly Basis</li>                                                
+                                                <li>Weekly Basis</li>
                                             </ul>
+                                            <form method="POST" action="{{ route('pay') }}" accept-charset="UTF-8" class="form-horizontal"
+                                                  role="form">
 
-                                            <div class="text-center">
-                                                <a href="https://paystack.com"
-                                                   class="btn btn-success btn-bordered-success rounded-pill waves-effect waves-light">Pay
-                                                    Now</a>
-                                            </div>
+                                                <div class="col-md-8 col-md-offset-2">
+                                                    <input type="hidden" name="email"
+                                                           value="{{Auth::user()->email}}"> {{-- required --}}
+                                                    <input type="hidden" name="amount" class="form-control" id="amount" value="5000000">
+                                                    <input type="hidden" name="orderID" value="345">
+                                                    <input type="hidden" name="currency" value="NGN">
+                                                    <input type="hidden" name="metadata"
+                                                           value="{{ json_encode($array = ['plan_type' => '4'], JSON_THROW_ON_ERROR) }}">{{-- For other necessary things you want to add to your payload. it is optional though --}}
+                                                    <input type="hidden" name="reference"
+                                                           value="{{ Paystack::genTranxRef() }}"> {{-- required --}}
+                                                    <input type="hidden" name="callback_url" class="form-control"
+                                                           value="{{route('handleGatewayCallback')}}">
+                                                    <input type="hidden" name="_token"
+                                                           value="{{ csrf_token() }}"> {{-- employ this in place of csrf_field only in laravel 5.0 --}}
+
+                                                </div>
+                                                <div class="text-center">
+                                                    <button class="btn  btn-bordered-success btn-success rounded-pill waves-effect waves-light" type="submit" value="Pay Now!">
+                                                        <i class="fa fa-plus-circle fa-lg"></i> Pay Now!
+                                                    </button>
+                                                </div>
+                                            </form>
+
+
                                         </div>
                                     </div>
                                 </article>
@@ -135,11 +219,9 @@
 
                             </div><!-- end row -->
                         </div>
-                    </div>
-                    <!-- end row -->
+                    </div>                    <!-- end row -->
                 </div>
             </div>
-           
 
         </div> <!-- container-fluid -->
 
@@ -147,5 +229,5 @@
     </div> <!-- content -->
 @endsection
 @section('js')
-   
+
 @endsection
