@@ -4,14 +4,16 @@ namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
 
-class SendRemindersxCommand extends Command
+use Illuminate\Support\Facades\Http;
+
+class UpdatePayments extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'command:name';
+    protected $signature = 'check:payments';
 
     /**
      * The console command description.
@@ -21,12 +23,25 @@ class SendRemindersxCommand extends Command
     protected $description = 'Command description';
 
     /**
+     * Create a new command instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        parent::__construct();
+    }
+
+    /**
      * Execute the console command.
      *
      * @return int
      */
     public function handle()
     {
-        return 0;
+
+        $response = Http::post(config('app.url').'api/verify_payments');
+
+        // return $response;
     }
 }

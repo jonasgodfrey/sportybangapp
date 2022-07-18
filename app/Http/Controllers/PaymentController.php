@@ -51,13 +51,15 @@ class PaymentController extends Controller {
 
         if( $status === 'success' ) {
             $subscription = UserSubscription::create( [
-                'user_id'       => $user->id,
-                'start_date'    => Carbon::parse( $payDate ),
-                'end_date'      => $duedate,
-                'status'        => 'active',
-                'plan_type'     => $package,
-                'amount'        => $amount,
-                'output_amount' => $output_amount,
+                'user_id'               => $user->id,
+                'start_date'            => Carbon::parse( $payDate ),
+                'end_date'              => $duedate,
+                'status'                => 'active',
+                'plan_type'             => $package,
+                'amount'                => $amount,
+                'cumulative_profit'     => $output_amount,
+                'current_profit'        => $output_amount,
+                'profit_increase_count' => 0,
             ] );
 
             Transactions::create( [

@@ -21,7 +21,9 @@ return new class extends Migration
             $table->string('status');
             $table->string('plan_type');
             $table->string('amount');
-            $table->string('output_amount');
+            $table->string('cumulative_profit');
+            $table->string('current_profit');
+            $table->string('profit_increase_count');
             $table->timestamps();
         });
     }

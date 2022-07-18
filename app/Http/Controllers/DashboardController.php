@@ -25,7 +25,7 @@ class DashboardController extends Controller {
         $amount_earned = 0;
         foreach( $investments as $investment ) {
             $amount_invested += $investment->amount;
-            $amount_earned += $investment->output_amount;
+            $amount_earned += $investment->cumulative_profit;
         }
 
         $total_investments_amount = number_format( $amount_invested );

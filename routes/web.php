@@ -14,9 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
-
-
 Route::group(['middleware' => ['auth']], function () {
 
     //Dashboard Route
@@ -36,7 +33,7 @@ Route::group(['middleware' => ['auth']], function () {
  * comment and uncomment to enable active subscription
  */
 
-Route::group(['middleware' => ['auth']], function () {
+Route::group(['middleware' => ['auth', 'subscribed']], function () {
     //Account Page Get Routes
     Route::get('/account-details', [App\Http\Controllers\AccountDetails::class, 'index'])->name('account_details.index');
     Route::get('/account-details/edit/{id}', [App\Http\Controllers\AccountDetails::class, 'edit'])->name('account_details.edit');
@@ -49,7 +46,8 @@ Route::group(['middleware' => ['auth']], function () {
     //Withdrawal Page Get Routes
     Route::get('/withdrawal', [App\Http\Controllers\WithdrawalRequestController::class, 'index'])->name('withdrawal.index');
     //Withdrawal Page post Routes
-    Route::get('/withdrawal/request/', [App\Http\Controllers\WithdrawalRequestController::class, 'withdraw'])->name('withdrawal.request');
+    Route::post('/withdrawal/request/', [App\Http\Controllers\WithdrawalRequestController::class, 'withdraw'])->name('withdrawal.request');
+    Route::post('/withdrawal/request/capital/', [App\Http\Controllers\WithdrawalRequestController::class, 'withdraw_capital'])->name('withdrawal.request.capital');
 
 });
 

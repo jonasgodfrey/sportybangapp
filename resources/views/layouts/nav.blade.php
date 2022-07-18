@@ -53,8 +53,6 @@
                     <div class="noti-scroll" data-simplebar>
                         @forelse ($notifications->take(10) as $notification)
                             <a href="javascript:void(0);" class="dropdown-item notify-item active">
-                                <div class="notify-icon">
-                                    <img src="/assets/images/user.png" class="img-fluid rounded-circle" alt="" /> </div>
                                 <p class="notify-details">Cristina Pride</p>
                                 <p class="text-muted mb-0 user-msg">
                                     <small>Hi, How are you? What about our next meeting</small>
@@ -133,7 +131,7 @@
         <div class="logo-box">
             <a href="/" class="logo logo-light text-center">
                 <span class="logo-sm">
-                
+
                     <img src="/assets/images/logo4app.png" alt="" height="50">
                 </span>
                 <span class="logo-lg">

@@ -16,8 +16,7 @@
     <link rel="shortcut icon" href="/assets/images/logo4app.png">
 
     <!-- App css -->
-    <link href="/assets/css/config/default/bootstrap.min.css" rel="stylesheet" type="text/css"
-        id="bs-default-stylesheet" />
+    <link href="/assets/css/config/default/bootstrap.min.css" rel="stylesheet" type="text/css" id="bs-default-stylesheet" />
     <link href="/assets/css/config/default/app.min.css" rel="stylesheet" type="text/css" id="/app-default-stylesheet" />
 
     <link href="/assets/css/config/default/bootstrap-dark.min.css" rel="stylesheet" type="text/css"
@@ -26,8 +25,7 @@
         disabled="disabled" />
     <!-- icons -->
     <link href="/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
-
-     <!-- third party css -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>     <!-- third party css -->
      <link href="/assets/libs/datatables.net-bs5/css/dataTables.bootstrap5.min.css" rel="stylesheet" type="text/css" />
      <link href="/assets/libs/datatables.net-responsive-bs5/css/responsive.bootstrap5.min.css" rel="stylesheet" type="text/css" />
      <link href="/assets/libs/datatables.net-buttons-bs5/css/buttons.bootstrap5.min.css" rel="stylesheet" type="text/css" />
@@ -49,14 +47,11 @@
         <div class="content-page">
             <!-- content -->
             @yield('content')
-
             @include('layouts.footer')
         </div>
         <!-- End Page content -->
     </div>
     <!-- END wrapper -->
-
-    
 
     <!-- Vendor js -->
     <script src="/assets/js/vendor.min.js"></script>
@@ -71,7 +66,8 @@
     <!-- App js-->
     <script src="/assets/js/app.min.js"></script>
      <!-- third party js -->
-     <script src="/assets/libs/datatables.net/js/jquery.dataTables.min.js"></script>
+
+    <script src="/assets/libs/datatables.net/js/jquery.dataTables.min.js"></script>
      <script src="/assets/libs/datatables.net-bs5/js/dataTables.bootstrap5.min.js"></script>
      <script src="/assets/libs/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
      <script src="/assets/libs/datatables.net-responsive-bs5/js/responsive.bootstrap5.min.js"></script>
@@ -87,7 +83,8 @@
      <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.3/moment.min.js" integrity="sha512-x/vqovXY/Q4b+rNjgiheBsA/vbWA3IVvsS8lkQSX1gQ4ggSJx38oI2vREZXpTzhAv6tNUaX81E7QBBzkpDQayA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/6-beta8/js/tempus-dominus.js" integrity="sha512-MPMzIx+Gq1BNJqltvB19yXU9BAWr+YHL/NcgAcNhPM7gqQvWJQE00cZOC5n3KSpdH5q/imNmC2gvB3LeoMAajw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-     <!-- third party js ends -->
+
+    <!-- third party js ends -->
      <!-- Datatables init -->
      <script src="/assets/js/pages/datatables.init.js"></script>
 
@@ -102,6 +99,9 @@
     @endphp
 
     <script>
+        setTimeout( function() {
+            $('.alert').hide()
+        }, 6000 )
 
         // Set the date we're counting down to
         if( '{{$date_time_string}}' !== ''){

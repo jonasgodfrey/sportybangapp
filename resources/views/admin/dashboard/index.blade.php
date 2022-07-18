@@ -17,6 +17,12 @@
                             </ol>
                         </div>
                         <h4 class="page-title">Dashboard</h4>
+                        <br>
+                        {{-- Flash message --}}
+                        <div id="alert">
+                            @include('partials.flash')
+                            @include('partials.modal')
+                        </div>
                     </div>
                 </div>
             </div>
@@ -64,7 +70,7 @@
 
                             </div>
 
-                            <h4 class="header-title mt-0 mb-4">Total Earnings</h4>
+                            <h4 class="header-title mt-0 mb-4">Cumulative Total Earnings</h4>
 
                             <div class="widget-chart-1">
                                 <div class="widget-chart-box-1 float-start" dir="ltr">
