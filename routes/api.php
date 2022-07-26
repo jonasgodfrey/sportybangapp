@@ -31,5 +31,5 @@ Route::post('/verify_otp', [ApiAuthController::class, 'verify_otp'])->middleware
 Route::get('/notifications', [UserEarningsCheckController::class, 'notifications'])->middleware('auth:sanctum');
 
 //Protected Routes
-Route::get('/check-and-update-user-details', [UserEarningsCheckController::class, 'sendemail']);
+Route::get('/verify_payments', [UserEarningsCheckController::class, 'sendemail']);
 
