@@ -33,6 +33,9 @@ Route::group(['middleware' => ['auth']], function () {
  * comment and uncomment to enable active subscription
  */
 
+Route::get('/admindash', [App\Http\Controllers\AdminDashController::class, 'admindash'])->name('admin.dashboard.admin');
+
+
 Route::group(['middleware' => ['auth', 'subscribed']], function () {
     //Account Page Get Routes
     Route::get('/account-details', [App\Http\Controllers\AccountDetails::class, 'index'])->name('account_details.index');
