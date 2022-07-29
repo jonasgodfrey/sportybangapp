@@ -46,13 +46,43 @@
                             <div class="widget-chart-1">
                                 <div class="widget-chart-box-1 float-start" dir="ltr">
                                     <input data-plugin="knob" data-width="70" data-height="70" data-fgColor="#f05050 "
-                                           data-bgColor="#F9B9B9" value="" data-skin="tron"
+                                           data-bgColor="#F9B9B9" value="{{ $regusers }}" data-skin="tron"
                                            data-angleOffset="180" data-readOnly=true data-thickness=".15"/>
                                 </div>
 
 
                                 <div class="widget-detail-1 text-end">
-                                    <h2 class="fw-normal pt-2 mb-1"> </h2>
+                                    <h2 class="fw-normal pt-2 mb-1">{{ $regusers ?? '0' }}</h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- end col -->
+
+                
+                <div class="col-xl-3 col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="dropdown float-end">
+                                <a href="#" class="dropdown-toggle arrow-none card-drop" data-bs-toggle="dropdown"
+                                   aria-expanded="false">
+                                    <i class="mdi mdi-dots-vertical"></i>
+                                </a>
+
+                            </div>
+
+                            <h4 class="header-title mt-0 mb-4">Number of Investors</h4>
+
+                            <div class="widget-chart-1">
+                                <div class="widget-chart-box-1 float-start" dir="ltr">
+                                    <input data-plugin="knob" data-width="70" data-height="70" data-fgColor="#f05050 "
+                                           data-bgColor="#4300A3" value="{{ $investors}}" data-skin="tron"
+                                           data-angleOffset="180" data-readOnly=true data-thickness=".15"/>
+                                </div>
+
+
+                                <div class="widget-detail-1 text-end">
+                                    <h2 class="fw-normal pt-2 mb-1">{{ $investors ?? '0' }} </h2>
                                 </div>
                             </div>
                         </div>
@@ -75,41 +105,13 @@
                             <div class="widget-chart-1">
                                 <div class="widget-chart-box-1 float-start" dir="ltr">
                                     <input data-plugin="knob" data-width="70" data-height="70" data-fgColor="#f05050 "
-                                           data-bgColor="#FF00CC" value="" data-skin="tron"
+                                           data-bgColor="#FF00CC" value="{{ $investors }}" data-skin="tron"
                                            data-angleOffset="180" data-readOnly=true data-thickness=".15"/>
                                 </div>
 
 
                                 <div class="widget-detail-1 text-end">
-                                    <h2 class="fw-normal pt-2 mb-1">  </h2>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div><!-- end col -->
-                <div class="col-xl-3 col-md-6">
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="dropdown float-end">
-                                <a href="#" class="dropdown-toggle arrow-none card-drop" data-bs-toggle="dropdown"
-                                   aria-expanded="false">
-                                    <i class="mdi mdi-dots-vertical"></i>
-                                </a>
-
-                            </div>
-
-                            <h4 class="header-title mt-0 mb-4">Total Investors</h4>
-
-                            <div class="widget-chart-1">
-                                <div class="widget-chart-box-1 float-start" dir="ltr">
-                                    <input data-plugin="knob" data-width="70" data-height="70" data-fgColor="#f05050 "
-                                           data-bgColor="#4300A3" value="" data-skin="tron"
-                                           data-angleOffset="180" data-readOnly=true data-thickness=".15"/>
-                                </div>
-
-
-                                <div class="widget-detail-1 text-end">
-                                    <h2 class="fw-normal pt-2 mb-1"> </h2>
+                                    <h2 class="fw-normal pt-2 mb-1">₦{{ $transaction ?? '0' }}</h2>
                                 </div>
                             </div>
                         </div>
@@ -127,18 +129,18 @@
 
                             </div>
 
-                            <h4 class="header-title mt-0 mb-4">Total Payments</h4>
+                            <h4 class="header-title mt-0 mb-4">Total Payouts</h4>
 
                             <div class="widget-chart-1">
                                 <div class="widget-chart-box-1 float-start" dir="ltr">
                                     <input data-plugin="knob" data-width="70" data-height="70" data-fgColor="#f05050 "
-                                           data-bgColor="#4300A3" value=" " data-skin="tron"
+                                           data-bgColor="#4300A3" value="0" data-skin="tron"
                                            data-angleOffset="180" data-readOnly=true data-thickness=".15"/>
                                 </div>
 
 
                                 <div class="widget-detail-1 text-end">
-                                    <h2 class="fw-normal pt-2 mb-1">  </h2>
+                                    <h2 class="fw-normal pt-2 mb-1">₦0.00</h2>
                                 </div>
                             </div>
                         </div>
