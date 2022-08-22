@@ -15,7 +15,9 @@ use Illuminate\Validation\Rules;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\Welcome;
 use App\Mail\EmailVerification;
+use App\Models\Bank;
 use App\Models\Role;
+use App\Models\Wallet;
 
 class RegisteredUserController extends Controller
 {
@@ -75,6 +77,17 @@ class RegisteredUserController extends Controller
             'usercode' => $regCode,
             // 'sponsors_id' => $validatedData['referrer_code'],
             'password' => Hash::make($request->password),
+        ]);
+
+        $bank = Bank::where('bank_code', $createAccount['data']['bank_code'])->first();
+        if (!$bank) {
+            return \response()->json(['status' => false, 'message' => "Bank not found"]);
+        }
+
+        Wallet::create([
+            'user_id' => $user->id,
+            'account_number' => $createAccount['data']['account_number'],
+            'bank_id' => $bank->id
         ]);
 
         $user->roles()->attach($admin_role);
