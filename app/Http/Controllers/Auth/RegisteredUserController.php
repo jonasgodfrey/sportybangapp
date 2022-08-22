@@ -52,7 +52,7 @@ class RegisteredUserController extends Controller
         $myAccountName = explode(" ", $request->name);
 
         $firstName = $myAccountName[0];
-        $lastName = $myAccountName[0];
+        $lastName = $myAccountName[1];
         $bank = "194";
         $dob = "1980-12-22";
 
