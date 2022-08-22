@@ -64,18 +64,28 @@ class User extends Authenticatable
         return $this->hasOne(UserSubscription::class, 'user_id')->latest();
     }
 
-    final public function subscriptions(): \Illuminate\Database\Eloquent\Relations\HasMany {
+    final public function subscriptions(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
         return $this->hasMany(UserSubscription::class, 'user_id');
     }
 
-    final public function transactions(): \Illuminate\Database\Eloquent\Relations\HasMany {
+    final public function transactions(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
         return $this->hasMany(Transactions::class)->orderByDesc('id');
     }
-    final public function transaction(): \Illuminate\Database\Eloquent\Relations\HasOne {
+    final public function transaction(): \Illuminate\Database\Eloquent\Relations\HasOne
+    {
         return $this->hasOne(Transactions::class)->latest();
     }
 
-    final public function bank_account_detail(): \Illuminate\Database\Eloquent\Relations\HasOne {
+
+    public function wallet()
+    {
+        return $this->hasOne(Wallet::class);
+    }
+
+    final public function bank_account_detail(): \Illuminate\Database\Eloquent\Relations\HasOne
+    {
         return $this->hasOne(AccountDetail::class);
     }
 
