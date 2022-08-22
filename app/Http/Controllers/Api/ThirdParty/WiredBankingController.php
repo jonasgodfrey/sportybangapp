@@ -43,7 +43,7 @@ class WiredBankingController extends Controller
         ];
 
         try {
-            $createAccountResponse = $this->wiredbankingPostRequest("users/api-register", $body);
+            $createAccountResponse = $this->wiredbankingPostRequest("api/v1/users/api-register", $body);
 
             logInfo($createAccountResponse, "Wiredbanking Create Account Response");
 
