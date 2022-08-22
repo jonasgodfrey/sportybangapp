@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\TransactionController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserEarningsCheckController;
@@ -27,9 +28,10 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::post('/register', [ApiAuthController::class, 'register']);
 Route::post('/login', [ApiAuthController::class, 'login']);
 
+Route::post('transactions/wiredbanking-webhook', [TransactionController::class, 'wiredbankingWebhook']);
+
 Route::post('/verify_otp', [ApiAuthController::class, 'verify_otp'])->middleware('auth:sanctum');
 Route::get('/notifications', [UserEarningsCheckController::class, 'notifications'])->middleware('auth:sanctum');
 
 //Protected Routes
 Route::get('/verify_payments', [UserEarningsCheckController::class, 'sendemail']);
-

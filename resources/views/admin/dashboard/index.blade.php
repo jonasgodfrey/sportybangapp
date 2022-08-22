@@ -38,18 +38,31 @@
 
         <div class="row">
 
-            <div class="col-xl-12 col-md-12">
-                <div class="alert alert-primary" role="alert">
-                    A simple primary alert—check it out!
-                  </div>
+            <div class="col-xl-6 col-md-6">
                 <div class="card">
                     <div class="card-body">
                         <h3 class="header-title mt-0 mb-2">Virtual Account Details</h3>
 
                         <div class="widget-chart-1">
                             <div class="widget-chart-box-1 float-start" dir="ltr">
-                                <h4>{{auth()->user()->wallet->bank->bank_name}}</h4>
+                                <h2>{{auth()->user()->wallet->bank->bank_name}}</h2>
                                 <h4 style="color: #aaaaaa;">{{auth()->user()->wallet->account_number}}</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- end col -->
+
+            <div class="col-xl-6 col-sm-6">
+
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="header-title mt-0 mb-0">Wallet Balance</h3>
+
+                        <div class="widget-chart-1">
+                            <div class="widget-chart-box-1 float-start" dir="ltr">
+                                <h2 class="fw-normal pt-2 mb-1"> ₦{{ auth()->user()->wallet->balance }} </h2>
+                                <h4 style="color: #aaaaaa;">View History</h4>
                             </div>
                         </div>
                     </div>
