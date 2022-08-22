@@ -15,11 +15,11 @@ return [
      * Public Key From Paystack Dashboard
      *
      */
-    'api_key' => getenv('WIREDBANKING_API_KEY_LIVE', "skjlaksk10iksko0i2e"),
+    'api_key' => getenv('WIREDBANKING_API_KEY_LIVE', "00oj6ifj4CbVy9TQolHsQxN8zGThpoj0"),
 
     /**
      * Paystack Payment URL
      *
      */
-    'base_url' => getenv('WIREDBANKING_BASE_URL', 'https://dev.wiredbanking.ng/api/v1/')
+    'base_url' => getenv('WIREDBANKING_BASE_URL', 'https://safe.wbalite.com/')
 ];

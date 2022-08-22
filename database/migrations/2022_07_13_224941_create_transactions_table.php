@@ -20,9 +20,13 @@ return new class extends Migration
             $table->string('balance_before');
             $table->string('amount');
             $table->string('balance_after');
-            $table->string('transaction_type');
+            $table->string('transaction_type_id');
+            $table->foreign('transaction_type_id')->references('id')->on('transaction_types');
             $table->string('action_date');
             $table->string('status');
+            $table->string('transaction_remarks_id');
+            $table->dateTime('transaction_date');
+            $table->string('credit_debit_type_id');
             $table->timestamps();
         });
     }
