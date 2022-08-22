@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Http\Controllers\Api\ThirdParty\WiredBankingController;
 use App\Http\Controllers\Controller;
 use App\Models\Notification;
 use App\Models\User;
@@ -38,12 +39,28 @@ class RegisteredUserController extends Controller
      */
     public function store(Request $request)
     {
+
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'phone' => ['required', 'string', 'min:10'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
+
+        $wirebankingController = new WiredBankingController();
+
+        $myAccountName = explode(" ", $request->name);
+
+        $firstName = $myAccountName[0];
+        $lastName = $myAccountName[0];
+        $bank = "194";
+        $dob = "1980-12-22";
+
+        $createAccount = $wirebankingController->createAccount($request->email, $request->phone, $firstName, $lastName, $bank, $dob);
+
+        if (!$createAccount['status']) {
+            return \response()->json($createAccount);
+        }
 
         $regCode = "PLA" . rand(11100, 999999);
         $admin_role = Role::where('name', 'admin')->first();
