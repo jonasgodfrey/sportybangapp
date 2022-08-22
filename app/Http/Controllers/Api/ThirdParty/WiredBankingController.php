@@ -31,7 +31,7 @@ class WiredBankingController extends Controller
     public function createAccount($email, $phoneNumber, $firstName, $lastName, $bank, $dob)
     {
 
-        $companyReference = "YndQA6DQGY2whOytXixI";
+        $companyReference = "mso3wJJSERLCQojCPyyA";
         $body = [
             "email" => $email,
             "phone" => $phoneNumber,
