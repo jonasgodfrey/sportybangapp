@@ -21,7 +21,8 @@ class DatabaseSeeder extends Seeder
             StateTableSeeder::class,
             CountrySeeder::class,
             StatusSeeder::class,
-            SubscriptionPackageSeeder::class
+            SubscriptionPackageSeeder::class,
+            BankSeeder::class
         ]);
     }
 }
