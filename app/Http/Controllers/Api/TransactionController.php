@@ -33,7 +33,10 @@ class TransactionController extends Controller
 
         $signature = $request->header('ApiKey');
 
-        $localSignature = env('APP_MODE') == 'live' ? config('wiredbanking.api_key') : config('wiredbanking.api_key');
+        // $localSignature = env('APP_MODE') == 'live' ? config('wiredbanking.api_key') : config('wiredbanking.api_key');
+        $localSignature = "00oj6ifj4CbVy9TQolHsQxN8zGThpoj0";
+
+        \logInfo("remote: $signature, local: $localSignature", "Signature difference");
 
         if ($signature != $localSignature) {
             return response()->json(['status' => false, 'message' => "Invalid Api Credentials"], 400);

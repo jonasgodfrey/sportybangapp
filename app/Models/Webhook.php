@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Webhook extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'webhook_body',
+    ];
+
 }
