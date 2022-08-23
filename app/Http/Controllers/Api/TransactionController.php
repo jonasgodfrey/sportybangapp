@@ -60,6 +60,7 @@ class TransactionController extends Controller
                 $transaction = Transactions::create([
                     "balance_before" => $account->balance,
                     "amount" => $request->amount,
+                    "user_id"=> $account->user_id,
                     "balance_after" => $account->balance + $request->amount,
                     "description" => $request->narration,
                     "transaction_reference" => $request->transaction_reference,

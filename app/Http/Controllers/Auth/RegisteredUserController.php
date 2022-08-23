@@ -54,7 +54,7 @@ class RegisteredUserController extends Controller
         $myAccountName = explode(" ", $request->name);
 
         $firstName = $myAccountName[0];
-        $lastName = $myAccountName[1];
+            $lastName = count($myAccountName) > 1 ? $myAccountName[1] : $firstName;
         $bank = "45";
         $dob = "1980-12-22";
 
