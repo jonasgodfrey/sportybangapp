@@ -69,7 +69,7 @@ class TransactionController extends Controller
                     "transaction_type_id" => 1,
                     "status" => "success",
                     "action_date" => Carbon::now(),
-                    "transaction_date" => $request->transaction_date,
+                    "transaction_date" => Carbon::now(),
                     "credit_debit_type_id" => 1,
                     "created_date"  => date('Y-m-d'),
                     "created_by" => 1
