@@ -55,7 +55,7 @@ class RegisteredUserController extends Controller
 
         $firstName = $myAccountName[0];
         $lastName = $myAccountName[1];
-        $bank = "194";
+        $bank = "45";
         $dob = "1980-12-22";
 
         $createAccount = $wirebankingController->createAccount($request->email, $request->phone, $firstName, $lastName, $bank, $dob);
